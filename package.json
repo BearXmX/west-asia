@@ -1,0 +1,37 @@
+{
+  "name": "vue3-ts-cesium",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "run-p type-check \"build-only {@}\" --",
+    "preview": "vite preview",
+    "build-only": "vite build",
+    "type-check": "vue-tsc --build"
+  },
+  "dependencies": {
+    "@turf/turf": "^7.3.4",
+    "cesium": "^1.139.1",
+    "element-plus": "^2.13.5",
+    "leaflet": "^1.9.4",
+    "vite-plugin-cesium": "^1.2.23",
+    "vue": "^3.5.29"
+  },
+  "devDependencies": {
+    "@tsconfig/node24": "^24.0.4",
+    "@types/leaflet": "^1.9.21",
+    "@types/node": "^24.11.0",
+    "@vitejs/plugin-vue": "^6.0.4",
+    "@vue/tsconfig": "^0.8.1",
+    "npm-run-all2": "^8.0.4",
+    "sass-embedded": "^1.100.0",
+    "typescript": "~5.9.3",
+    "vite": "^7.3.1",
+    "vite-plugin-vue-devtools": "^8.0.6",
+    "vue-tsc": "^3.2.5"
+  },
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  }
+}
