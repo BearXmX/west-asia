@@ -136,7 +136,7 @@ let abortController: AbortController | null = null
 const activeCountry = ref('')
 const useGoogle = ref(false)
 
-const centerLat = 20.5
+const centerLat = 25.5
 const centerLng = 45.5
 const zoomLevel = 5
 

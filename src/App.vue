@@ -33,7 +33,7 @@
       <div class="ppt-progress">
         <div :style="{ width: `${((getIndex + 1) / pptPages.length) * 100}%` }"></div>
       </div>
-      <div class="ppt-content">
+      <div class="ppt-content animate__animated animate__fadeIn" :key="currentKey">
         <component :is="components[currentKey as keyof typeof components]" :current="current" />
       </div>
 
@@ -299,6 +299,7 @@ onUnmounted(() => window.removeEventListener('resize', handleResize))
     background-color: #fbfaf8;
     border-radius: 8px;
     box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
   }
 
   /* 移动端底部控制栏 */

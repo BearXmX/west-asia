@@ -540,6 +540,8 @@ const activeSummary = computed(() => {
   background:
     radial-gradient(circle at 50% 45%, rgba(59, 130, 246, 0.12), transparent 28%), linear-gradient(135deg, #eef6ff 0%, #f8fafc 48%, #fff7ed 100%);
   overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .board-title {
@@ -622,8 +624,9 @@ const activeSummary = computed(() => {
 }
 
 .diagram-node.active {
-  border-color: #ef4444;
+  border-color: var(--primary-color);
   box-shadow: 0 8px 18px rgba(239, 68, 68, 0.22);
+  z-index: 999;
 }
 
 .node-icon {
@@ -755,9 +758,8 @@ const activeSummary = computed(() => {
 }
 
 .map-tip {
-  position: absolute;
-  right: 18px;
-  bottom: 14px;
+  display: inline-flex;
+  margin-top: 12px;
   background: rgba(255, 255, 255, 0.92);
   padding: 6px 10px;
   border-radius: 999px;

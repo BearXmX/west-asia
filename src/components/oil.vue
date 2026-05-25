@@ -278,7 +278,7 @@ let baseLayer: L.TileLayer | null = null
 let labelPane: HTMLDivElement | null = null
 let updateLabelRaf = 0
 
-const centerLat = 10.5
+const centerLat = 25.5
 const centerLng = 45.5
 const zoomLevel = 5
 
