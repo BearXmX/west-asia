@@ -10,82 +10,141 @@
       <!-- 左侧文字内容区 -->
       <div class="terrain-content-left">
         <div class="terrain-card terrain-card-01">
-          <div class="terrain-card-header"><i class="iconfont icon-diqiu"></i>地形与海拔特征</div>
-          <p class="mb-8">西亚整体以高原地形为主，山地、平原面积狭小，区域整体海拔偏高，地势起伏差异明显。</p>
+          <div class="terrain-card-header"><i class="iconfont icon-haibagaodu"></i>地形与海拔特征</div>
+
+          <p class="mb-8">西亚地形并非单一高原，而是由高原、山地、沙漠、盆地和平原共同组成，整体起伏较大，地势高低差异明显。</p>
+
           <ul class="list-disc pl-5 mb-8">
-            <li class="mb-2"><strong>安纳托利亚高原</strong>：西北部核心地形，山脉交错，地势起伏大</li>
-            <li class="mb-2"><strong>伊朗高原</strong>：东北部广袤高地，平均海拔较高</li>
-            <li class="mb-2"><strong>阿拉伯高原</strong>：盘踞阿拉伯半岛，整体西高东低</li>
+            <li class="mb-2"><strong>安纳托利亚高原</strong>：位于区域西北部，周缘山地发育，地势起伏明显。</li>
+            <li class="mb-2"><strong>伊朗高原</strong>：位于区域东北部和东部，海拔较高，周围受山脉环绕。</li>
+            <li class="mb-2"><strong>阿拉伯高原</strong>：位于阿拉伯半岛，整体以干旱高原和沙漠地貌为主，西部地势较高，向东部和波斯湾沿岸降低。</li>
           </ul>
-          <p class="mb-8">死海湖面海拔约-415米，为全球陆地最低点；仅两河沿岸形成狭窄冲积平原。</p>
+
+          <p class="mb-8">区域低地主要分布在美索不达米亚平原、波斯湾沿岸和地中海东岸等地；死海湖面低于海平面约430米，是世界陆地最低地区之一。</p>
         </div>
 
         <div class="terrain-card terrain-card-02">
-          <div class="terrain-card-header"><i class="iconfont icon-river"></i>主要河流与山地</div>
+          <div class="terrain-card-header"><i class="iconfont icon-gaoyuanfanyingshengu"></i>主要河流与山地</div>
+
           <div class="geo-item mb-6">
             <div class="item-title">幼发拉底河、底格里斯河</div>
-            <div class="item-desc">区域核心外流河，冲积形成美索不达米亚平原，孕育古老文明</div>
+            <div class="item-desc">两河自北部山地流向波斯湾方向，冲积形成美索不达米亚平原，是西亚重要的农业和文明发祥区域。</div>
           </div>
+
+          <div class="geo-item mb-6">
+            <div class="item-title">扎格罗斯山脉</div>
+            <div class="item-desc">位于伊朗高原西南缘，是伊朗高原与美索不达米亚低地之间的重要地形分界。</div>
+          </div>
+
           <div class="geo-item">
-            <div class="item-title">大高加索山脉、扎格罗斯山脉</div>
-            <div class="item-desc">区域重要分界山地，地势高耸，阻挡水汽输送，加剧内陆干旱</div>
+            <div class="item-title">大高加索山脉</div>
+            <div class="item-desc">位于西亚北缘附近，山地高耸，对区域北部地形格局和水汽分布具有重要影响。</div>
           </div>
         </div>
 
         <div class="terrain-card terrain-card-03">
-          <div class="terrain-card-header"><i class="iconfont icon-rain"></i>降水分布特点</div>
-          <p class="mb-8">整体降水稀缺，空间分布极度不均，内陆荒漠几乎无有效降水。</p>
+          <div class="terrain-card-header"><i class="iconfont icon-jiangshui"></i>降水分布特点</div>
+
+          <p class="mb-8">西亚整体干旱、半干旱范围广，但降水并非处处稀少，空间差异很明显。</p>
+
           <ul class="list-disc pl-5 mb-4">
-            <li>地中海沿岸：冬季降水集中，区域湿润度最高</li>
-            <li>高原山地迎风坡：少量地形雨，局部水源充足</li>
-            <li>半岛内陆、高原腹地：全年干旱少雨，荒漠广布</li>
+            <li class="mb-2"><strong>地中海沿岸</strong>：受地中海气候影响，降水多集中在冬季。</li>
+            <li class="mb-2"><strong>山地迎风坡</strong>：受地形抬升影响，局部降水相对较多。</li>
+            <li class="mb-2"><strong>阿拉伯半岛内陆与伊朗高原内部</strong>：远离海洋且受干旱气候控制，降水稀少，荒漠和半荒漠广布。</li>
           </ul>
         </div>
 
         <div class="terrain-card terrain-card-04">
-          <div class="terrain-card-header"><i class="iconfont icon-weather"></i>气候类型概况</div>
-          <p class="mb-8">受副热带高压与干燥信风控制，区域整体气候炎热干旱。</p>
+          <div class="terrain-card-header"><i class="iconfont icon-quanqiuqihou"></i>气候类型概况</div>
+
+          <p class="mb-8">西亚以干旱、半干旱气候为主，但受纬度、海陆位置和地形影响，气候类型具有明显地域差异。</p>
+
           <div class="climate-item mb-6">
-            <div class="item-title">热带沙漠气候</div>
-            <div class="item-desc">分布最广，全年高温少雨，荒漠地貌连片分布</div>
+            <div class="item-title">热带、亚热带沙漠气候</div>
+            <div class="item-desc">主要分布在阿拉伯半岛、叙利亚沙漠和伊朗南部等地，降水稀少，蒸发强烈。</div>
           </div>
+
           <div class="climate-item mb-6">
-            <div class="item-title">温带大陆性气候</div>
-            <div class="item-desc">高原内陆区，昼夜温差悬殊，全年降水匮乏</div>
-          </div>
-          <div class="climate-item">
             <div class="item-title">地中海气候</div>
-            <div class="item-desc">沿岸狭长区域，夏干冬雨，气候条件相对宜居</div>
+            <div class="item-desc">主要分布在地中海东岸和土耳其西部、南部沿海，表现为夏季炎热干燥、冬季温和多雨。</div>
+          </div>
+
+          <div class="climate-item">
+            <div class="item-title">温带大陆性与高山气候</div>
+            <div class="item-desc">多见于安纳托利亚高原、伊朗高原及其周边山地，气温年较差较大，山地垂直差异明显。</div>
           </div>
         </div>
       </div>
 
       <!-- 右侧地图区域 -->
       <div class="terrain-content-right">
-        <!-- GeoJSON 图层切换面板 -->
+        <div id="westAsiaMap" class="leaflet-map"></div>
+
+        <div class="map-tip">支持拖拽 / 滚轮缩放查看细节</div>
+
+        <!-- 右侧图层控制 + 海拔图例 -->
         <div class="layer-control-panel">
           <div class="panel-title">图层控制</div>
+
           <div class="layer-item" v-for="layer in layerList" :key="layer.id">
             <label>
-              <input type="checkbox" :checked="layer.visible" @change="(e: any) => toggleGeoJsonLayer(layer.id, e.target!.checked!)" />
+              <input type="checkbox" :checked="layer.visible" @change="handleLayerChange(layer.id, $event)" />
               {{ layer.name }}
             </label>
           </div>
-        </div>
 
-        <div id="westAsiaMap" class="leaflet-map"></div>
-        <div class="map-tip">支持拖拽 / 滚轮缩放查看细节</div>
+          <div class="elevation-legend">
+            <div class="legend-title">海拔图例</div>
+
+            <div class="legend-gradient"></div>
+
+            <div class="legend-scale">
+              <span>低</span>
+              <span>高</span>
+            </div>
+
+            <div class="legend-item">
+              <span class="legend-color sea-low"></span>
+              <span>低于0米：洼地、死海沿岸</span>
+            </div>
+
+            <div class="legend-item">
+              <span class="legend-color lowland"></span>
+              <span>0–200米：平原、沿海低地</span>
+            </div>
+
+            <div class="legend-item">
+              <span class="legend-color plain"></span>
+              <span>200–500米：低高原、盆地</span>
+            </div>
+
+            <div class="legend-item">
+              <span class="legend-color plateau"></span>
+              <span>500–1500米：高原、丘陵</span>
+            </div>
+
+            <div class="legend-item">
+              <span class="legend-color mountain"></span>
+              <span>1500–3000米：山地、高原边缘</span>
+            </div>
+
+            <div class="legend-item">
+              <span class="legend-color high-mountain"></span>
+              <span>3000米以上：高山地区</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { onMounted, onUnmounted, ref } from 'vue'
+import { nextTick, onMounted, onUnmounted, ref } from 'vue'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 
-const props = defineProps<{
+defineProps<{
   current: {
     title: string
     desc: string
@@ -93,53 +152,66 @@ const props = defineProps<{
   }
 }>()
 
-let map: L.Map = null!
+let map: L.Map | null = null
 let baseLayer: L.TileLayer | null = null
-const centerLat = 33.5
-const centerLng = 43.5
+let labelPane: HTMLDivElement | null = null
+let updateLabelRaf = 0
+
+const centerLat = 20.5
+const centerLng = 45.5
 const zoomLevel = 5
 
-// GeoJSON 图层配置
+type DomLabel = {
+  latlng: L.LatLng
+  el: HTMLDivElement
+  offsetX: number
+  offsetY: number
+}
+
+type GeoLayerConfig = {
+  id: string
+  name: string
+  url: string
+  visible: boolean
+  layer: L.GeoJSON | null
+  labels: DomLabel[]
+  abortController: AbortController | null
+}
+
 const baseGeoUrl = 'https://course-code.oss-cn-shanghai.aliyuncs.com/geojson/'
-const layerList = ref([
-  {
-    id: 'asia-july-temp',
-    name: '亚洲七月气温',
-    url: baseGeoUrl + '亚洲七月气温.geojson',
-    visible: false,
-    layer: null as L.GeoJSON | null,
-  },
-  {
-    id: 'asia-jan-temp',
-    name: '亚洲一月气温',
-    url: baseGeoUrl + '亚洲一月气温.geojson',
-    visible: false,
-    layer: null as L.GeoJSON | null,
-  },
+
+const layerList = ref<GeoLayerConfig[]>([
   {
     id: 'asia-climate',
     name: '亚洲气候类型',
     url: baseGeoUrl + '亚洲气候类型.geojson',
     visible: false,
-    layer: null as L.GeoJSON | null,
+    layer: null,
+    labels: [],
+    abortController: null,
   },
   {
     id: 'westasia-rain',
     name: '西亚年降水量分布',
     url: baseGeoUrl + '西亚年降水量分布.geojson',
     visible: false,
-    layer: null as L.GeoJSON | null,
+    layer: null,
+    labels: [],
+    abortController: null,
   },
   {
     id: 'westasia-river',
     name: '西亚主要河流分布',
     url: baseGeoUrl + '西亚主要河流分布.geojson',
     visible: false,
-    layer: null as L.GeoJSON | null,
+    layer: null,
+    labels: [],
+    abortController: null,
   },
 ])
 
-// 文字路径点位，单字依次排布
+const fixedLabels: DomLabel[] = []
+
 const charPathList = [
   {
     path: [
@@ -162,25 +234,31 @@ const charPathList = [
     ],
     text: '阿拉伯高原',
   },
-  { path: [[31.3, 35.4]], text: '死海' },
   {
     path: [
-      [37.8, 38.2],
-      [36.2, 42.5],
+      [31.8, 35.4],
+      [31.0, 35.4],
+    ],
+    text: '死海',
+  },
+  {
+    path: [
+      [36.8, 38.2],
+      [34.2, 41.5],
     ],
     text: '幼发拉底河',
   },
   {
     path: [
       [37.2, 43.2],
-      [34.8, 45.8],
+      [34.8, 43.8],
     ],
     text: '底格里斯河',
   },
   {
     path: [
       [41.8, 44.5],
-      [40.2, 47.2],
+      [41.2, 47.2],
     ],
     text: '大高加索山脉',
   },
@@ -193,95 +271,369 @@ const charPathList = [
   },
   {
     path: [
-      [34.8, 42.8],
-      [33.2, 44.8],
+      [33.8, 43.8],
+      [32.2, 45.8],
     ],
     text: '美索不达米亚平原',
   },
 ]
 
-// 均分路径点位
+function escapeHtml(value: unknown) {
+  return String(value ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;')
+}
+
 function getPointsOnPath(path: number[][], count: number): [number, number][] {
   const pts: [number, number][] = []
+
+  if (!path.length || count <= 0) return pts
+
   if (path.length === 1) {
-    // @ts-ignore
-    for (let i = 0; i < count; i++) pts.push([path[0][0], path[0][1]])
+    for (let i = 0; i < count; i++) {
+      pts.push([path[0]![0]!, path[0]![1]!])
+    }
     return pts
   }
-  const start = path[0]
 
-  const end = path[path.length - 1]
-  // @ts-ignore
-  const latStep = (end[0] - start[0]) / (count - 1 || 1)
-  // @ts-ignore
-  const lngStep = (end[1] - start[1]) / (count - 1 || 1)
+  const start = path[0]
+  const end = path[path.length - 1]!
+
+  const latStep = (end[0]! - start![0]!) / (count - 1 || 1)
+  const lngStep = (end[1]! - start![1]!) / (count - 1 || 1)
+
   for (let i = 0; i < count; i++) {
-    // @ts-ignore
-    pts.push([start[0] + latStep * i, start[1] + lngStep * i])
+    pts.push([start![0]! + latStep * i, start![1]! + lngStep * i])
   }
+
   return pts
 }
 
-// 逐个单字标注
-function addSingleCharLabel() {
-  charPathList.forEach(item => {
-    const chars = item.text.split('')
-    const points = getPointsOnPath(item.path, chars.length)
-    chars.forEach((char, idx) => {
-      L.tooltip({
-        permanent: true,
-        direction: 'center',
-        className: 'single-char-label',
-        interactive: false,
-      })
-        .setLatLng(points[idx]!)
-        .setContent(char)
-        .addTo(map)
-    })
+function initLabelPane() {
+  if (!map) return
+
+  const container = map.getContainer()
+
+  const oldPane = container.querySelector('.custom-map-label-pane')
+  if (oldPane) {
+    oldPane.remove()
+  }
+
+  labelPane = document.createElement('div')
+  labelPane.className = 'custom-map-label-pane'
+
+  container.appendChild(labelPane)
+}
+
+function createDomLabel(options: { lat: number; lng: number; content: string; className: string; offsetX?: number; offsetY?: number }) {
+  if (!labelPane) return null
+
+  const el = document.createElement('div')
+  el.className = options.className
+  el.innerHTML = escapeHtml(options.content)
+
+  labelPane.appendChild(el)
+
+  const label: DomLabel = {
+    latlng: L.latLng(options.lat, options.lng),
+    el,
+    offsetX: options.offsetX ?? 0,
+    offsetY: options.offsetY ?? 0,
+  }
+
+  updateOneLabelPosition(label)
+
+  return label
+}
+
+function updateOneLabelPosition(label: DomLabel) {
+  if (!map) return
+
+  const point = map.latLngToContainerPoint(label.latlng)
+
+  label.el.style.left = `${point.x + label.offsetX}px`
+  label.el.style.top = `${point.y + label.offsetY}px`
+}
+
+function updateAllLabelPositions() {
+  updateLabelRaf = 0
+
+  fixedLabels.forEach(updateOneLabelPosition)
+
+  layerList.value.forEach(layer => {
+    layer.labels.forEach(updateOneLabelPosition)
   })
 }
 
-// 切换 GeoJSON 图层，读取内部fillColor
-const toggleGeoJsonLayer = (id: string, visible: boolean) => {
-  const layerConfig = layerList.value.find(l => l.id === id)
-  if (!layerConfig) return
-
-  if (visible) {
-    fetch(layerConfig.url)
-      .then(res => res.json())
-      .then(data => {
-        layerConfig.layer = L.geoJSON(data, {
-          style: feature => {
-            const props = feature?.properties || {}
-            return {
-              color: feature?.geometry.type === 'MultiLineString' ? props.fillColor : 'rgba(255, 255, 255, 0)',
-              weight: 2,
-              fillColor: props.fillColor || '#cccccc',
-              fillOpacity: 1,
-            }
-          },
-        }).addTo(map)
-        layerConfig.visible = true
-      })
-  } else {
-    if (layerConfig.layer) {
-      map.removeLayer(layerConfig.layer as any)
-
-      layerConfig.layer = null
-    }
-    layerConfig.visible = false
-  }
+function scheduleUpdateLabels() {
+  if (updateLabelRaf) return
+  updateLabelRaf = requestAnimationFrame(updateAllLabelPositions)
 }
 
-// 加载OTM地形底图
-const initBaseMap = () => {
-  if (baseLayer) map.removeLayer(baseLayer)
-  const url = 'https://course-code.oss-cn-shanghai.aliyuncs.com/tiles/otm-tiles/{z}/{x}/{y}.png'
+function bindMapLabelEvents() {
+  if (!map) return
+
+  map.on('move', scheduleUpdateLabels)
+  map.on('moveend', scheduleUpdateLabels)
+  map.on('zoom', scheduleUpdateLabels)
+  map.on('zoomend', scheduleUpdateLabels)
+  map.on('viewreset', scheduleUpdateLabels)
+  map.on('resize', scheduleUpdateLabels)
+}
+
+function unbindMapLabelEvents() {
+  if (!map) return
+
+  map.off('move', scheduleUpdateLabels)
+  map.off('moveend', scheduleUpdateLabels)
+  map.off('zoom', scheduleUpdateLabels)
+  map.off('zoomend', scheduleUpdateLabels)
+  map.off('viewreset', scheduleUpdateLabels)
+  map.off('resize', scheduleUpdateLabels)
+}
+
+function clearDomLabels(labels: DomLabel[]) {
+  labels.forEach(label => {
+    label.el.remove()
+  })
+
+  labels.length = 0
+}
+
+function addSingleCharLabel() {
+  clearDomLabels(fixedLabels)
+
+  charPathList.forEach(item => {
+    const chars = item.text.split('')
+    const points = getPointsOnPath(item.path, chars.length)
+
+    chars.forEach((char, idx) => {
+      const point = points[idx]
+      if (!point) return
+
+      const label = createDomLabel({
+        lat: point[0],
+        lng: point[1],
+        content: char,
+        className: 'single-char-label-dom',
+        offsetX: 0,
+        offsetY: 0,
+      })
+
+      if (label) {
+        fixedLabels.push(label)
+      }
+    })
+  })
+
+  scheduleUpdateLabels()
+}
+
+function initBaseMap() {
+  if (!map) return
+
+  if (baseLayer) {
+    baseLayer.removeFrom(map)
+    baseLayer = null
+  }
+
+  const url = 'https://zdys.szjx.ai-study.net/geo-resources-folder/tiles/otm-tiles/{z}/{x}/{y}.png'
+
   baseLayer = L.tileLayer(url, {
     attribution: '',
     minZoom: 2,
     maxZoom: 7,
   }).addTo(map)
+}
+
+function clearLayerResources(layerConfig: GeoLayerConfig) {
+  if (layerConfig.abortController) {
+    layerConfig.abortController.abort()
+    layerConfig.abortController = null
+  }
+
+  clearDomLabels(layerConfig.labels)
+
+  if (layerConfig.layer && map) {
+    layerConfig.layer.removeFrom(map)
+    layerConfig.layer = null
+  }
+}
+
+function handleLayerChange(id: string, event: Event) {
+  const target = event.target as HTMLInputElement
+  toggleGeoJsonLayer(id, target.checked)
+}
+
+function getLayerLabelClassName(id: string) {
+  if (id === 'westasia-rain') return 'rain-label-dom'
+  return 'climate-label-dom'
+}
+
+async function toggleGeoJsonLayer(id: string, visible: boolean) {
+  if (!map) return
+
+  const layerConfig = layerList.value.find(l => l.id === id)
+  if (!layerConfig) return
+
+  clearLayerResources(layerConfig as GeoLayerConfig)
+
+  layerConfig.visible = visible
+
+  if (!visible) return
+
+  const abortController = new AbortController()
+  layerConfig.abortController = abortController
+
+  try {
+    const response = await fetch(layerConfig.url, {
+      signal: abortController.signal,
+    })
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`)
+    }
+
+    const data = await response.json()
+
+    if (abortController.signal.aborted || !layerConfig.visible || !map) {
+      return
+    }
+
+    layerConfig.layer = L.geoJSON(data, {
+      filter: feature => {
+        const type = feature?.geometry?.type
+        return type !== 'Point' && type !== 'MultiPoint'
+      },
+
+      style: feature => {
+        const props = feature?.properties || {}
+        const geometryType = feature?.geometry?.type
+
+        if (geometryType === 'MultiLineString' || geometryType === 'LineString') {
+          return {
+            color: props.fillColor || '#2563eb',
+            weight: 2,
+            opacity: 1,
+          }
+        }
+
+        return {
+          color: 'rgba(255, 255, 255, 0)',
+          weight: 2,
+          fillColor: props.fillColor || '#cccccc',
+          fillOpacity: 0.8,
+        }
+      },
+    }).addTo(map)
+
+    addGeoJsonDomLabels(data, id, layerConfig as GeoLayerConfig)
+
+    await nextTick()
+
+    map.invalidateSize(false)
+    scheduleUpdateLabels()
+  } catch (error: any) {
+    if (error?.name === 'AbortError') {
+      console.log(`图层 ${layerConfig.name} 请求已取消`)
+    } else {
+      console.error(`加载图层 ${layerConfig.name} 失败:`, error)
+      layerConfig.visible = false
+      layerConfig.layer = null
+      clearDomLabels(layerConfig.labels)
+    }
+  } finally {
+    if (layerConfig.abortController === abortController) {
+      layerConfig.abortController = null
+    }
+  }
+}
+
+function addGeoJsonDomLabels(geojson: any, id: string, layerConfig: GeoLayerConfig) {
+  const features = getGeoJsonFeatures(geojson)
+
+  features.forEach((feature: any) => {
+    if (!feature?.geometry) return
+
+    const type = feature.geometry.type
+
+    if (type === 'Point') {
+      addGeoJsonPointLabel(feature, id, layerConfig)
+    }
+
+    if (type === 'MultiPoint') {
+      const coordinates = feature.geometry.coordinates
+      if (!Array.isArray(coordinates)) return
+
+      coordinates.forEach((coord: any) => {
+        addGeoJsonPointLabel(
+          {
+            ...feature,
+            geometry: {
+              type: 'Point',
+              coordinates: coord,
+            },
+          },
+          id,
+          layerConfig,
+        )
+      })
+    }
+  })
+
+  scheduleUpdateLabels()
+}
+
+function getGeoJsonFeatures(geojson: any) {
+  if (!geojson) return []
+
+  if (geojson.type === 'FeatureCollection') {
+    return Array.isArray(geojson.features) ? geojson.features : []
+  }
+
+  if (geojson.type === 'Feature') {
+    return [geojson]
+  }
+
+  return []
+}
+
+function addGeoJsonPointLabel(feature: any, id: string, layerConfig: GeoLayerConfig) {
+  const labelText = feature.properties?.labelText
+  if (!labelText) return
+
+  const coordinates = feature.geometry?.coordinates
+  if (!Array.isArray(coordinates) || coordinates.length < 2) return
+
+  const lng = Number(coordinates[0])
+  const lat = Number(coordinates[1])
+
+  if (!Number.isFinite(lat) || !Number.isFinite(lng)) return
+
+  const content = `${labelText}${id === 'westasia-rain' ? 'mm' : ''}`
+
+  const label = createDomLabel({
+    lat,
+    lng,
+    content,
+    className: getLayerLabelClassName(id),
+    offsetX: 0,
+    offsetY: -8,
+  })
+
+  if (label) {
+    layerConfig.labels.push(label)
+  }
+}
+
+function cleanupAllLayers() {
+  layerList.value.forEach(layerConfig => {
+    clearLayerResources(layerConfig as GeoLayerConfig)
+    layerConfig.visible = false
+  })
 }
 
 onMounted(() => {
@@ -292,14 +644,47 @@ onMounted(() => {
     maxZoom: 7,
     dragging: true,
     scrollWheelZoom: true,
+    zoomAnimation: false,
+    markerZoomAnimation: false,
+    fadeAnimation: false,
   }).setView([centerLat, centerLng], zoomLevel)
 
   initBaseMap()
+  initLabelPane()
+  bindMapLabelEvents()
   addSingleCharLabel()
+
+  requestAnimationFrame(() => {
+    map?.invalidateSize(false)
+    scheduleUpdateLabels()
+  })
 })
 
 onUnmounted(() => {
-  if (map) map.remove()
+  if (updateLabelRaf) {
+    cancelAnimationFrame(updateLabelRaf)
+    updateLabelRaf = 0
+  }
+
+  unbindMapLabelEvents()
+
+  cleanupAllLayers()
+  clearDomLabels(fixedLabels)
+
+  if (baseLayer && map) {
+    baseLayer.removeFrom(map)
+    baseLayer = null
+  }
+
+  if (labelPane) {
+    labelPane.remove()
+    labelPane = null
+  }
+
+  if (map) {
+    map.remove()
+    map = null
+  }
 })
 </script>
 
@@ -309,14 +694,17 @@ onUnmounted(() => {
   height: 100%;
   width: 100%;
 }
+
 .terrain-header {
   margin-bottom: 32px;
 }
+
 .terrain-content {
   display: flex;
   justify-content: space-between;
   height: calc(100% - 80px);
 }
+
 .terrain-content-left {
   width: 38%;
   display: flex;
@@ -324,6 +712,7 @@ onUnmounted(() => {
   gap: 12px;
   overflow-y: auto;
 }
+
 .terrain-content-right {
   width: 60%;
   height: 100%;
@@ -332,11 +721,13 @@ onUnmounted(() => {
   background: #fff;
   position: relative;
 }
+
 :deep(.leaflet-map) {
   width: 100%;
   height: 100%;
   z-index: 1;
 }
+
 .map-tip {
   position: absolute;
   top: 10px;
@@ -346,68 +737,90 @@ onUnmounted(() => {
   border-radius: 6px;
   font-size: 12px;
   color: #666;
-  z-index: 10;
+  z-index: 1000;
 }
+
 .terrain-card {
   border-radius: 8px;
   border: 1px solid #dbeafe;
   padding: 14px;
 }
+
 .terrain-card-01 {
   background-color: #eff6ff;
 }
+
 .terrain-card-02 {
   background-color: #f0fdf4;
   border-color: #bbf7d0;
 }
+
 .terrain-card-03 {
   background-color: #f0f7ff;
   border-color: #bfdbfe;
 }
+
 .terrain-card-04 {
   background-color: #ffefd6;
   border-color: #ffce80;
 }
+
 .iconfont {
   margin-right: 8px;
   color: #1e3a8a;
 }
+
 .terrain-card-02 .iconfont {
   color: #047857;
 }
+
 .terrain-card-03 .iconfont {
   color: #2563eb;
 }
+
 .terrain-card-04 .iconfont {
   color: #78350f;
 }
+
 .terrain-card-header {
   margin-bottom: 12px;
   font-weight: bold;
   font-size: 15px;
   color: #1e3a8a;
 }
+
 .terrain-card-02 .terrain-card-header {
   color: #047857;
 }
+
 .terrain-card-03 .terrain-card-header {
   color: #2563eb;
 }
+
 .terrain-card-04 .terrain-card-header {
   color: #78350f;
 }
+
 .mb-8 {
   margin-bottom: 8px;
 }
+
 .mb-6 {
   margin-bottom: 6px;
 }
+
 .mb-4 {
   margin-bottom: 4px;
 }
+
+.mb-2 {
+  margin-bottom: 2px;
+}
+
 .pl-5 {
   padding-left: 20px;
 }
+
 .list-disc {
   list-style: disc;
 }
@@ -419,57 +832,171 @@ onUnmounted(() => {
   border-radius: 4px;
   border-left: 3px solid #f59e0b;
 }
+
 .item-title {
   font-weight: bold;
   margin-bottom: 4px;
   color: #78350f;
 }
+
 .item-desc {
   font-size: 14px;
   color: #444;
 }
 
-/* 图层控制面板 */
+/* 右侧图层控制面板 + 海拔图例 */
 .layer-control-panel {
   position: absolute;
-  top: 100px;
-  left: 10px;
+  top: 48px;
+  right: 10px;
+  width: 230px;
+  max-height: calc(100% - 70px);
+  overflow-y: auto;
   background: rgba(255, 255, 255, 0.95);
   padding: 10px;
   border-radius: 6px;
   font-size: 12px;
-  z-index: 10;
+  z-index: 1000;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
 }
+
 .panel-title {
   font-weight: bold;
   margin-bottom: 8px;
   color: #333;
 }
+
 .layer-item {
   margin-bottom: 6px;
 }
-.layer-item:last-child {
+
+.layer-item:last-of-type {
   margin-bottom: 0;
 }
 
-/* 单字标注样式 */
-:deep(.single-char-label) {
+/* 海拔图例 */
+.elevation-legend {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.legend-title {
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.legend-gradient {
+  width: 100%;
+  height: 12px;
+  border-radius: 999px;
+  margin-bottom: 4px;
+  background: linear-gradient(to right, #63b7d8 0%, #7fc97f 18%, #c9e89a 35%, #f2d27a 52%, #c98645 72%, #8b4a2b 90%, #f3efe2 100%);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.legend-scale {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 5px;
+  line-height: 1.4;
+  color: #333;
+}
+
+.legend-item:last-child {
+  margin-bottom: 0;
+}
+
+.legend-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  flex-shrink: 0;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.legend-color.sea-low {
+  background: #63b7d8;
+}
+
+.legend-color.lowland {
+  background: #7fc97f;
+}
+
+.legend-color.plain {
+  background: #c9e89a;
+}
+
+.legend-color.plateau {
+  background: #f2d27a;
+}
+
+.legend-color.mountain {
+  background: #c98645;
+}
+
+.legend-color.high-mountain {
+  background: #8b4a2b;
+}
+
+:deep(.custom-map-label-pane) {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 650;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+:deep(.single-char-label-dom) {
+  position: absolute;
+  transform: translate(-50%, -50%);
   font-size: 14px;
   font-weight: bold;
   color: #d92525;
   text-shadow: 0 0 2px #fff;
   padding: 4px;
   background-color: #fff;
+  border-radius: 2px;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
 }
 
-:deep(.single-char-label .leaflet-tooltip-content) {
+:deep(.climate-label-dom) {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
 }
-:deep(.leaflet-tooltip-tip) {
-  display: none !important;
-}
-:deep(.leaflet-marker-icon),
-:deep(.leaflet-marker-shadow) {
-  display: none !important;
+
+:deep(.rain-label-dom) {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  background-color: rgba(30, 64, 175, 0.8);
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
 }
 </style>

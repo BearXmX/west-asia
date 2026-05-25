@@ -73,24 +73,46 @@
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 import Cover from './components/cover.vue'
 import Position from './components/position.vue'
-import Compose‌ from './components/compose‌.vue'
+import compose from './components/compose.vue'
 import Terrain from './components/terrain.vue'
+import Oil from './components/oil.vue'
+import Water from './components/water.vue'
+import Agriculture from './components/agriculture.vue'
+import Culture from './components/culture.vue'
+import Sustainable from './components/sustainable.vue'
+import Hotspot from './components/hotspot.vue'
+import Summary from './components/summary.vue'
+import Population from './components/population.vue'
 
 // 组件映射
 const components = {
   cover: Cover,
-  compose‌: Compose‌,
+  compose: compose,
   position: Position,
   terrain: Terrain,
-  oil: Cover,
+  oil: Oil,
+  water: Water,
+  agriculture: Agriculture,
+  culture: Culture,
+  sustainable: Sustainable,
+  population: Population,
+  hotspot: Hotspot,
+  summary: Summary,
 }
 
 const pptPages = [
   { key: 'cover', index: 1, title: '课程封面', desc: '走进西亚' },
   { key: 'position', index: 2, title: '西亚地理位置', desc: '两洋三洲五海之地' },
-  { key: 'compose‌', index: 3, title: '西亚主要组成', desc: '多国交汇枢纽之域' },
+  { key: 'compose', index: 3, title: '西亚的组成', desc: '多国交汇枢纽之域' },
   { key: 'terrain', index: 4, title: '地形与自然环境', desc: '干旱的高原大陆' },
-  { key: 'oil', index: 5, title: '石油资源分布', desc: '两洋三洲五海之地' },
+  { key: 'oil', index: 5, title: '世界石油宝库', desc: '黑色金子' },
+  { key: 'water', index: 6, title: '水资源危机', desc: '比石油更珍贵的水' },
+  { key: 'agriculture', index: 7, title: '绿洲农业与灌溉农业', desc: '沙漠中的生计' },
+  { key: 'population', index: 8, title: '人口与城市', desc: '沙漠中的聚落与现代都市' },
+  { key: 'culture', index: 9, title: '多元文化与宗教', desc: '文明交汇之地' },
+  { key: 'sustainable', index: 10, title: '可持续发展', desc: '从石油依赖到多元转型' },
+  { key: 'hotspot', index: 11, title: '长期热点原因', desc: '世界关注的焦点地区' },
+  { key: 'summary', index: 12, title: '课堂小结', desc: '区域特征综合归纳' },
 ]
 
 const currentKey = ref('cover')
