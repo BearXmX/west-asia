@@ -208,6 +208,15 @@ const layerList = ref<GeoLayerConfig[]>([
     labels: [],
     abortController: null,
   },
+  {
+    id: 'asia-river',
+    name: '亚洲主要河流分布',
+    url: baseGeoUrl + '亚洲主要河流分布.geojson',
+    visible: false,
+    layer: null,
+    labels: [],
+    abortController: null,
+  },
 ])
 
 const fixedLabels: DomLabel[] = []
@@ -470,7 +479,19 @@ function handleLayerChange(id: string, event: Event) {
 
 function getLayerLabelClassName(id: string) {
   if (id === 'westasia-rain') return 'rain-label-dom'
+  if (id === 'westasia-river' || id === 'asia-river') return 'river-label-dom'
   return 'climate-label-dom'
+}
+
+function getLineLayerStyle(id: string, props: any) {
+  const isRiverLayer = id === 'westasia-river' || id === 'asia-river'
+
+  return {
+    color: props.strokeColor || props.fillColor || (isRiverLayer ? '#0ea5e9' : '#2563eb'),
+    weight: props.weight || (isRiverLayer ? 3 : 2),
+    opacity: props.opacity ?? 1,
+    dashArray: props.dashArray || '',
+  }
 }
 
 async function toggleGeoJsonLayer(id: string, visible: boolean) {
@@ -514,18 +535,15 @@ async function toggleGeoJsonLayer(id: string, visible: boolean) {
         const geometryType = feature?.geometry?.type
 
         if (geometryType === 'MultiLineString' || geometryType === 'LineString') {
-          return {
-            color: props.fillColor || '#2563eb',
-            weight: 2,
-            opacity: 1,
-          }
+          return getLineLayerStyle(id, props)
         }
 
         return {
-          color: 'rgba(255, 255, 255, 0)',
-          weight: 2,
+          color: props.strokeColor || 'rgba(255, 255, 255, 0)',
+          weight: props.weight || 2,
           fillColor: props.fillColor || '#cccccc',
-          fillOpacity: 0.8,
+          fillOpacity: props.fillOpacity ?? 0.8,
+          opacity: props.opacity ?? 1,
         }
       },
     }).addTo(map)
@@ -602,7 +620,7 @@ function getGeoJsonFeatures(geojson: any) {
 }
 
 function addGeoJsonPointLabel(feature: any, id: string, layerConfig: GeoLayerConfig) {
-  const labelText = feature.properties?.labelText
+  const labelText = feature.properties?.labelText || feature.properties?.name
   if (!labelText) return
 
   const coordinates = feature.geometry?.coordinates
@@ -613,7 +631,7 @@ function addGeoJsonPointLabel(feature: any, id: string, layerConfig: GeoLayerCon
 
   if (!Number.isFinite(lat) || !Number.isFinite(lng)) return
 
-  const content = `${labelText}${id === 'westasia-rain' ? 'mm' : ''}`
+  const content = id === 'westasia-rain' ? `${labelText}mm` : `${labelText}`
 
   const label = createDomLabel({
     lat,
@@ -998,5 +1016,22 @@ onUnmounted(() => {
   white-space: nowrap;
   pointer-events: none;
   user-select: none;
+}
+
+:deep(.river-label-dom) {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  background-color: rgba(14, 116, 144, 0.86);
+  color: #fff;
+  padding: 2px 7px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: bold;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  box-shadow:
+    0 2px 6px rgba(15, 39, 72, 0.18),
+    0 0 0 1px rgba(255, 255, 255, 0.45);
 }
 </style>

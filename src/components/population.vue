@@ -161,6 +161,16 @@
           </label>
 
           <label>
+            <input type="checkbox" v-model="showPopulationTiles" @change="togglePopulationTiles" />
+            人口密度影像
+          </label>
+
+          <label>
+            <input type="checkbox" v-model="showNightLightTiles" @change="toggleNightLightTiles" />
+            夜间灯光影像
+          </label>
+
+          <label>
             <input type="checkbox" v-model="showDenseAreas" @change="refreshMapLayers" />
             人口较集中区
           </label>
@@ -189,6 +199,16 @@
             <div class="legend-title">图例</div>
 
             <div class="legend-row">
+              <span class="legend-area population-tile-area"></span>
+              <span>人口密度影像</span>
+            </div>
+
+            <div class="legend-row">
+              <span class="legend-area night-light-area"></span>
+              <span>夜间灯光影像</span>
+            </div>
+
+            <div class="legend-row">
               <span class="legend-area dense-area"></span>
               <span>人口较集中区</span>
             </div>
@@ -212,6 +232,57 @@
               <span class="legend-dot holy-dot"></span>
               <span>宗教圣城</span>
             </div>
+          </div>
+
+          <div v-if="showPopulationTiles" class="population-density-legend">
+            <div class="density-title">人口密度图例</div>
+
+            <div class="density-row">
+              <span class="density-color density-0"></span>
+              <span>0</span>
+            </div>
+
+            <div class="density-row">
+              <span class="density-color density-1"></span>
+              <span>1 - 5</span>
+            </div>
+
+            <div class="density-row">
+              <span class="density-color density-2"></span>
+              <span>6 - 25</span>
+            </div>
+
+            <div class="density-row">
+              <span class="density-color density-3"></span>
+              <span>26 - 50</span>
+            </div>
+
+            <div class="density-row">
+              <span class="density-color density-4"></span>
+              <span>51 - 100</span>
+            </div>
+
+            <div class="density-row">
+              <span class="density-color density-5"></span>
+              <span>101 - 500</span>
+            </div>
+
+            <div class="density-row">
+              <span class="density-color density-6"></span>
+              <span>501 - 2 500</span>
+            </div>
+
+            <div class="density-row">
+              <span class="density-color density-7"></span>
+              <span>2 501 - 5 000</span>
+            </div>
+
+            <div class="density-row density-last-row">
+              <span class="density-color density-8"></span>
+              <span>5 001 - 185 000</span>
+            </div>
+
+            <div class="density-unit">单位：人 / 千米²</div>
           </div>
         </div>
       </div>
@@ -259,6 +330,8 @@ type DomLabel = {
 
 let map: L.Map | null = null
 let baseLayer: L.TileLayer | null = null
+let populationTileLayer: L.TileLayer | null = null
+let nightLightTileLayer: L.TileLayer | null = null
 let labelPane: HTMLDivElement | null = null
 let updateLabelRaf = 0
 
@@ -267,6 +340,8 @@ const centerLng = 45.5
 const zoomLevel = 5
 
 const useGoogle = ref(false)
+const showPopulationTiles = ref(false)
+const showNightLightTiles = ref(false)
 const showDenseAreas = ref(true)
 const showSparseAreas = ref(true)
 const showTraditionalCities = ref(true)
@@ -468,9 +543,75 @@ function switchBaseLayer() {
     attribution: '',
     minZoom: 2,
     maxZoom: 7,
+    maxNativeZoom: 7,
+    zIndex: 1,
   }).addTo(map)
 
   scheduleUpdateLabels()
+}
+
+function togglePopulationTiles() {
+  if (!map) return
+
+  if (showPopulationTiles.value) {
+    if (populationTileLayer) {
+      populationTileLayer.removeFrom(map)
+      populationTileLayer = null
+    }
+
+    populationTileLayer = L.tileLayer('https://zdys.szjx.ai-study.net/geo-resources-folder/tiles/population-tiles/{z}/{x}/{y}.png', {
+      attribution: '',
+      minZoom: 0,
+      maxZoom: 7,
+      maxNativeZoom: 7,
+      opacity: 0.76,
+      zIndex: 10,
+    }).addTo(map)
+  } else if (populationTileLayer) {
+    populationTileLayer.removeFrom(map)
+    populationTileLayer = null
+  }
+
+  scheduleUpdateLabels()
+}
+
+function toggleNightLightTiles() {
+  if (!map) return
+
+  if (showNightLightTiles.value) {
+    if (nightLightTileLayer) {
+      nightLightTileLayer.removeFrom(map)
+      nightLightTileLayer = null
+    }
+
+    nightLightTileLayer = L.tileLayer('https://zdys.szjx.ai-study.net/geo-resources-folder/tiles/night-light-tiles/{z}/{x}/{y}.png', {
+      attribution: '',
+      minZoom: 0,
+      maxZoom: 7,
+      maxNativeZoom: 7,
+      opacity: 0.72,
+      zIndex: 11,
+    }).addTo(map)
+  } else if (nightLightTileLayer) {
+    nightLightTileLayer.removeFrom(map)
+    nightLightTileLayer = null
+  }
+
+  scheduleUpdateLabels()
+}
+
+function clearImageLayers() {
+  if (!map) return
+
+  if (populationTileLayer) {
+    populationTileLayer.removeFrom(map)
+    populationTileLayer = null
+  }
+
+  if (nightLightTileLayer) {
+    nightLightTileLayer.removeFrom(map)
+    nightLightTileLayer = null
+  }
 }
 
 function initLabelPane() {
@@ -526,25 +667,11 @@ function updateOneLabelPosition(label: DomLabel) {
 function updateAllLabelPositions() {
   updateLabelRaf = 0
 
-  if (showDenseAreas.value) {
-    denseLabels.forEach(updateOneLabelPosition)
-  }
-
-  if (showSparseAreas.value) {
-    sparseLabels.forEach(updateOneLabelPosition)
-  }
-
-  if (showTraditionalCities.value) {
-    traditionalCityLabels.forEach(updateOneLabelPosition)
-  }
-
-  if (showModernCities.value) {
-    modernCityLabels.forEach(updateOneLabelPosition)
-  }
-
-  if (showHolyCities.value) {
-    holyCityLabels.forEach(updateOneLabelPosition)
-  }
+  if (showDenseAreas.value) denseLabels.forEach(updateOneLabelPosition)
+  if (showSparseAreas.value) sparseLabels.forEach(updateOneLabelPosition)
+  if (showTraditionalCities.value) traditionalCityLabels.forEach(updateOneLabelPosition)
+  if (showModernCities.value) modernCityLabels.forEach(updateOneLabelPosition)
+  if (showHolyCities.value) holyCityLabels.forEach(updateOneLabelPosition)
 }
 
 function scheduleUpdateLabels() {
@@ -727,6 +854,8 @@ function refreshMapLayers() {
 function cleanupMapLayers() {
   if (!map) return
 
+  clearImageLayers()
+
   denseLayer.clearLayers()
   sparseLayer.clearLayers()
   traditionalCityLayer.clearLayers()
@@ -762,6 +891,10 @@ onMounted(async () => {
   switchBaseLayer()
   initLabelPane()
   bindMapLabelEvents()
+
+  if (showPopulationTiles.value) togglePopulationTiles()
+  if (showNightLightTiles.value) toggleNightLightTiles()
+
   refreshMapLayers()
 
   await nextTick()
@@ -1060,10 +1193,6 @@ onUnmounted(() => {
   margin-bottom: 8px;
 }
 
-.factor-row:last-of-type {
-  margin-bottom: 0;
-}
-
 .factor-label {
   font-weight: bold;
   color: #075985;
@@ -1151,7 +1280,9 @@ onUnmounted(() => {
   position: absolute;
   top: 48px;
   right: 10px;
-  width: 210px;
+  width: 238px;
+  max-height: calc(100% - 70px);
+  overflow-y: auto;
   background: rgba(255, 255, 255, 0.95);
   padding: 10px;
   border-radius: 6px;
@@ -1194,16 +1325,22 @@ onUnmounted(() => {
   line-height: 1.35;
 }
 
-.legend-row:last-child {
-  margin-bottom: 0;
-}
-
 .legend-area {
   width: 14px;
   height: 10px;
   border-radius: 999px;
   display: inline-block;
   flex-shrink: 0;
+}
+
+.population-tile-area {
+  background: linear-gradient(to right, rgba(254, 240, 138, 0.9), rgba(249, 115, 22, 0.9), rgba(185, 28, 28, 0.9));
+  border: 1px solid rgba(185, 28, 28, 0.75);
+}
+
+.night-light-area {
+  background: linear-gradient(to right, #111827, #facc15, #ffffff);
+  border: 1px solid rgba(15, 23, 42, 0.75);
 }
 
 .dense-area {
@@ -1242,7 +1379,89 @@ onUnmounted(() => {
   box-sizing: border-box;
 }
 
-/* 自定义地图文字层，避免 Leaflet tooltip 缩放错位 */
+/* 人口密度图例：只在勾选人口密度影像时显示 */
+.population-density-legend {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  background: transparent;
+  color: #333;
+}
+
+.density-title {
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.density-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  font-size: 12px;
+  line-height: 1;
+  white-space: nowrap;
+  color: #222;
+}
+
+.density-last-row {
+  margin-bottom: 6px;
+}
+
+.density-color {
+  width: 20px;
+  height: 15px;
+  display: inline-block;
+  flex-shrink: 0;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.density-0 {
+  background: #cfd3d8;
+}
+
+.density-1 {
+  background: #ffffd8;
+}
+
+.density-2 {
+  background: #ffff88;
+}
+
+.density-3 {
+  background: #fbff26;
+}
+
+.density-4 {
+  background: #ffb51b;
+}
+
+.density-5 {
+  background: #ff6414;
+}
+
+.density-6 {
+  background: #e4141c;
+}
+
+.density-7 {
+  background: #b70a15;
+}
+
+.density-8 {
+  background: #8f0008;
+}
+
+.density-unit {
+  text-align: right;
+  font-size: 11px;
+  font-weight: bold;
+  color: #333;
+  opacity: 0.9;
+}
+
 :deep(.custom-map-label-pane) {
   position: absolute;
   left: 0;
