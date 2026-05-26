@@ -86,7 +86,7 @@
         <div class="layer-control-panel">
           <div class="panel-title">图层控制</div>
 
-          <div class="layer-item" v-for="layer in layerList" :key="layer.id">
+          <div class="layer-item" v-for="layer in layerList.filter(item => (!isEnhance ? item.id !== 'asia-river' : true))" :key="layer.id">
             <label>
               <input type="checkbox" :checked="layer.visible" @change="handleLayerChange(layer.id, $event)" />
               {{ layer.name }}
@@ -150,6 +150,7 @@ defineProps<{
     desc: string
     index: number
   }
+  isEnhance: boolean
 }>()
 
 let map: L.Map | null = null

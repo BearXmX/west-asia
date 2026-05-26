@@ -160,12 +160,12 @@
             切换谷歌地图
           </label>
 
-          <label>
+          <label v-if="isEnhance">
             <input type="checkbox" v-model="showPopulationTiles" @change="togglePopulationTiles" />
             人口密度影像
           </label>
 
-          <label>
+          <label v-if="isEnhance">
             <input type="checkbox" v-model="showNightLightTiles" @change="toggleNightLightTiles" />
             夜间灯光影像
           </label>
@@ -198,12 +198,12 @@
           <div class="map-legend">
             <div class="legend-title">图例</div>
 
-            <div class="legend-row">
+            <div class="legend-row" v-if="isEnhance">
               <span class="legend-area population-tile-area"></span>
               <span>人口密度影像</span>
             </div>
 
-            <div class="legend-row">
+            <div class="legend-row" v-if="isEnhance">
               <span class="legend-area night-light-area"></span>
               <span>夜间灯光影像</span>
             </div>
@@ -301,6 +301,7 @@ defineProps<{
     desc: string
     index: number
   }
+  isEnhance: boolean
 }>()
 
 type PopulationPoint = {

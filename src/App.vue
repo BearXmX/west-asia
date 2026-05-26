@@ -34,7 +34,7 @@
         <div :style="{ width: `${((getIndex + 1) / pptPages.length) * 100}%` }"></div>
       </div>
       <div class="ppt-content animate__animated animate__fadeIn" :key="currentKey">
-        <component :is="components[currentKey as keyof typeof components]" :current="current" />
+        <component :is="components[currentKey as keyof typeof components]" :current="current" :isEnhance="isEnhance" />
       </div>
 
       <!-- 小屏底部控制栏 -->
@@ -118,6 +118,9 @@ const pptPages = [
 const currentKey = ref('cover')
 const showThumbPopup = ref(false)
 const screenWidth = ref(window.innerWidth)
+
+// 控制加强版
+const isEnhance = ref(false)
 
 const current = computed(() => {
   const index = pptPages.findIndex(item => item.key === currentKey.value)
