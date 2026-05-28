@@ -294,6 +294,7 @@
 import { nextTick, onMounted, onUnmounted, ref } from 'vue'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
+import { TILE_MAP } from '@/resource'
 
 defineProps<{
   current: {
@@ -536,15 +537,13 @@ function switchBaseLayer() {
     baseLayer = null
   }
 
-  const url = useGoogle.value
-    ? 'https://zdys.szjx.ai-study.net/geo-resources-folder/tiles/google-tiles/{z}/{x}/{y}.png'
-    : 'https://zdys.szjx.ai-study.net/geo-resources-folder/tiles/osm-tiles/{z}/{x}/{y}.png'
+  const url = useGoogle.value ? TILE_MAP['google']! : TILE_MAP['osm']!
 
   baseLayer = L.tileLayer(url, {
     attribution: '',
     minZoom: 2,
-    maxZoom: 7,
-    maxNativeZoom: 7,
+    maxZoom: 5,
+    maxNativeZoom: 5,
     zIndex: 1,
   }).addTo(map)
 
@@ -560,11 +559,11 @@ function togglePopulationTiles() {
       populationTileLayer = null
     }
 
-    populationTileLayer = L.tileLayer('https://zdys.szjx.ai-study.net/geo-resources-folder/tiles/population-tiles/{z}/{x}/{y}.png', {
+    populationTileLayer = L.tileLayer(TILE_MAP['population']!, {
       attribution: '',
       minZoom: 0,
-      maxZoom: 7,
-      maxNativeZoom: 7,
+      maxZoom: 5,
+      maxNativeZoom: 5,
       opacity: 0.76,
       zIndex: 10,
     }).addTo(map)
@@ -585,11 +584,11 @@ function toggleNightLightTiles() {
       nightLightTileLayer = null
     }
 
-    nightLightTileLayer = L.tileLayer('https://zdys.szjx.ai-study.net/geo-resources-folder/tiles/night-light-tiles/{z}/{x}/{y}.png', {
+    nightLightTileLayer = L.tileLayer(TILE_MAP['night']!, {
       attribution: '',
       minZoom: 0,
-      maxZoom: 7,
-      maxNativeZoom: 7,
+      maxZoom: 5,
+      maxNativeZoom: 5,
       opacity: 0.72,
       zIndex: 11,
     }).addTo(map)
@@ -881,7 +880,7 @@ onMounted(async () => {
     zoomControl: true,
     attributionControl: false,
     minZoom: 2,
-    maxZoom: 7,
+    maxZoom: 5,
     dragging: true,
     scrollWheelZoom: true,
     zoomAnimation: false,

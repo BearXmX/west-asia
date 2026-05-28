@@ -5,9 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "run-p type-check \"build-only {@}\" --",
+    "build:online": "vite build --mode online",
+    "build:offline": "vite build --mode offline",
     "preview": "vite preview",
-    "build-only": "vite build",
     "type-check": "vue-tsc --build"
   },
   "dependencies": {
@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "@tsconfig/node24": "^24.0.4",
+    "@types/fs-extra": "^11.0.4",
     "@types/leaflet": "^1.9.21",
     "@types/node": "^24.11.0",
     "@vitejs/plugin-vue": "^6.0.4",

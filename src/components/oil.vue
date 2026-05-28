@@ -1,156 +1,130 @@
 <template>
-  <div class="population-container">
-    <div class="population-header module-header">
+  <div class="oil-container">
+    <div class="oil-header module-header">
       <span>{{ current.index < 10 ? `0${current.index}` : current.index }}</span>
       <span>{{ current.title }}：</span>
       <span>“{{ current.desc }}”</span>
     </div>
 
-    <div class="population-content">
-      <!-- 左侧内容区 -->
-      <div class="population-content-left">
-        <div class="population-card population-card-01">
-          <div class="population-card-header"><i class="iconfont icon-mti-shiyourenkou"></i>人口分布总体特征</div>
+    <div class="oil-content">
+      <div class="oil-content-left">
+        <div class="oil-card oil-card-01">
+          <div class="oil-card-header"><i class="iconfont icon-nengyuan"></i>西亚石油资源概况</div>
 
-          <p class="mb-8">
-            西亚大部分地区气候干旱，沙漠和高原面积广，人口分布总体上
-            <strong>不均衡</strong>，主要集中在有水源、交通便利、经济发达或宗教文化地位突出的地区。
+          <p>
+            西亚是世界石油资源最丰富、石油产量和出口量都很重要的地区之一。 石油资源主要集中在
+            <strong>波斯湾及其沿岸地区</strong>， 形成了沙特阿拉伯、伊朗、伊拉克、科威特、阿联酋、卡塔尔等重要产油国。
           </p>
 
           <div class="feature-grid">
             <div class="feature-box">
-              <div class="feature-title">人口较集中</div>
-              <div class="feature-value">沿海、河谷、绿洲</div>
-              <div class="feature-desc">水源和交通条件较好，适合聚落和城市发展。</div>
+              <div class="feature-title">资源特点</div>
+              <div class="feature-value">储量大、油质好</div>
+              <div class="feature-desc">波斯湾沿岸油气资源丰富，开采条件较好。</div>
             </div>
 
             <div class="feature-box">
-              <div class="feature-title">人口较稀疏</div>
-              <div class="feature-value">沙漠、高原内部</div>
-              <div class="feature-desc">降水少、蒸发强，生产生活条件较严酷。</div>
+              <div class="feature-title">出口特点</div>
+              <div class="feature-value">大量出口</div>
+              <div class="feature-desc">石油通过海运和管道输往东亚、欧洲、北美等地区。</div>
             </div>
           </div>
 
           <div class="note-box">
             <div class="note-title">核心理解</div>
             <div>
-              西亚人口和城市分布，本质上受
-              <strong>水源、交通、石油、宗教、贸易</strong>
-              等因素共同影响。
+              学习西亚石油，要抓住：
+              <strong>波斯湾沿岸产油，霍尔木兹海峡外运，影响世界能源格局。</strong>
             </div>
           </div>
         </div>
 
-        <div class="population-card population-card-02">
-          <div class="population-card-header"><i class="iconfont icon-fenbu"></i>人口与城市分布规律</div>
+        <div class="oil-card oil-card-02">
+          <div class="oil-card-header"><i class="iconfont icon-fenbu"></i>石油分布规律</div>
 
           <div class="rule-item">
-            <div class="rule-title">沿河谷分布</div>
-            <div class="rule-desc">两河流域和约旦河谷水源相对稳定，农业、聚落和城市发展条件较好。</div>
+            <div class="rule-title">集中在波斯湾沿岸</div>
+            <div class="rule-desc">西亚石油资源高度集中，波斯湾周边是世界重要油气富集区。</div>
           </div>
 
           <div class="rule-item">
-            <div class="rule-title">沿海湾分布</div>
-            <div class="rule-desc">波斯湾沿岸因石油资源、港口贸易和现代服务业发展，形成许多现代化城市。</div>
+            <div class="rule-title">产油国分布集中</div>
+            <div class="rule-desc">沙特阿拉伯、伊朗、伊拉克、科威特、阿联酋和卡塔尔是典型产油国。</div>
           </div>
 
           <div class="rule-item">
-            <div class="rule-title">沿绿洲分布</div>
-            <div class="rule-desc">沙漠中的绿洲依靠地下水或泉水形成聚落，是干旱区重要生活空间。</div>
+            <div class="rule-title">资源与港口联系紧密</div>
+            <div class="rule-desc">石油需要通过港口、油轮和管道外运，交通通道十分重要。</div>
           </div>
 
           <div class="rule-item">
-            <div class="rule-title">沿交通节点分布</div>
-            <div class="rule-desc">海峡、港口、商路和宗教朝觐路线附近，容易形成重要城市节点。</div>
+            <div class="rule-title">能源经济特征明显</div>
+            <div class="rule-desc">部分国家依托石油收入发展城市建设、金融、航空、旅游和服务业。</div>
           </div>
         </div>
 
-        <div class="population-card population-card-03">
-          <div class="population-card-header"><i class="iconfont icon-chengshi"></i>城市类型识记</div>
+        <div class="oil-card oil-card-03">
+          <div class="oil-card-header"><i class="iconfont icon-gaosu"></i>石油输出路线</div>
 
-          <div class="city-type-grid">
-            <div class="city-type-card traditional">
-              <div class="city-type-icon">🏛</div>
-              <div class="city-type-title">历史文化城市</div>
-              <div class="city-type-desc">耶路撒冷、巴格达、大马士革、伊斯坦布尔等，历史悠久，文化积淀深厚。</div>
+          <div class="route-item">
+            <div class="route-title">东运路线</div>
+            <div class="route-desc">波斯湾 → 霍尔木兹海峡 → 阿拉伯海 → 印度洋 → 马六甲海峡 → 南海 → 东亚。</div>
+          </div>
+
+          <div class="route-item">
+            <div class="route-title">西运欧洲路线</div>
+            <div class="route-desc">波斯湾 → 霍尔木兹海峡 → 阿拉伯海 → 红海 → 苏伊士运河 → 地中海 → 欧洲。</div>
+          </div>
+
+          <div class="route-item">
+            <div class="route-title">西运绕非路线</div>
+            <div class="route-desc">波斯湾 → 霍尔木兹海峡 → 印度洋 → 好望角 → 大西洋 → 欧洲或北美。</div>
+          </div>
+        </div>
+
+        <div class="oil-card oil-card-04">
+          <div class="oil-card-header"><i class="iconfont icon-anchor-full"></i>重要海峡与港口</div>
+
+          <div class="strait-grid">
+            <div class="strait-card">
+              <div class="strait-title">霍尔木兹海峡</div>
+              <div class="strait-desc">波斯湾石油外运的咽喉，被称为“世界油阀”。</div>
             </div>
 
-            <div class="city-type-card religious">
-              <div class="city-type-icon">🕌</div>
-              <div class="city-type-title">宗教圣城</div>
-              <div class="city-type-desc">麦加、麦地那、耶路撒冷等，宗教地位突出，具有重要文化影响。</div>
+            <div class="strait-card">
+              <div class="strait-title">苏伊士运河</div>
+              <div class="strait-desc">连接红海和地中海，是西亚石油通往欧洲的重要通道。</div>
             </div>
 
-            <div class="city-type-card oil">
-              <div class="city-type-icon">⛽</div>
-              <div class="city-type-title">石油城市</div>
-              <div class="city-type-desc">科威特城、阿布扎比、多哈等，依托油气资源和港口发展。</div>
+            <div class="strait-card">
+              <div class="strait-title">曼德海峡</div>
+              <div class="strait-desc">连接红海和亚丁湾，是红海航线的重要节点。</div>
             </div>
 
-            <div class="city-type-card modern">
-              <div class="city-type-icon">🏙</div>
-              <div class="city-type-title">现代都市</div>
-              <div class="city-type-desc">迪拜、多哈、阿布扎比等，航空、金融、贸易和旅游功能突出。</div>
+            <div class="strait-card">
+              <div class="strait-title">波斯湾港口</div>
+              <div class="strait-desc">油轮、炼化、港口贸易和能源运输高度集中。</div>
             </div>
           </div>
         </div>
 
-        <div class="population-card population-card-04">
-          <div class="population-card-header"><i class="iconfont icon-wuliyinsu"></i>人口城市形成因素</div>
-
-          <div class="factor-row">
-            <div class="factor-label">水源</div>
-            <div class="factor-bar">
-              <div class="factor-fill water-fill"></div>
-            </div>
-            <div class="factor-text">河流、绿洲、地下水决定干旱区聚落基础。</div>
-          </div>
-
-          <div class="factor-row">
-            <div class="factor-label">石油</div>
-            <div class="factor-bar">
-              <div class="factor-fill oil-fill"></div>
-            </div>
-            <div class="factor-text">波斯湾沿岸形成能源型城市和港口城市。</div>
-          </div>
-
-          <div class="factor-row">
-            <div class="factor-label">交通</div>
-            <div class="factor-bar">
-              <div class="factor-fill traffic-fill"></div>
-            </div>
-            <div class="factor-text">海峡、港口、商路加强城市联系。</div>
-          </div>
-
-          <div class="factor-row">
-            <div class="factor-label">宗教</div>
-            <div class="factor-bar">
-              <div class="factor-fill religion-fill"></div>
-            </div>
-            <div class="factor-text">圣城和朝觐活动增强城市影响力。</div>
-          </div>
-
-          <div class="chart-tip">注：上图为课堂示意，用于理解影响因素强弱关系，不表示严格统计比例。</div>
-        </div>
-
-        <div class="population-card population-card-05">
-          <div class="population-card-header"><i class="iconfont icon-kaoshi"></i>中考记忆点</div>
+        <div class="oil-card oil-card-05">
+          <div class="oil-card-header"><i class="iconfont icon-kaoshi"></i>中考记忆点</div>
 
           <ul class="exam-list">
-            <li><strong>一看自然：</strong>气候干旱，沙漠高原人口稀少。</li>
-            <li><strong>二看水源：</strong>河谷、绿洲、沿海地区人口较集中。</li>
-            <li><strong>三看资源：</strong>波斯湾沿岸因石油和港口形成现代城市群。</li>
-            <li><strong>四看文化：</strong>麦加、麦地那、耶路撒冷等宗教城市影响突出。</li>
-            <li><strong>五看转型：</strong>迪拜、多哈、阿布扎比等城市体现经济多元化发展。</li>
+            <li><strong>一记分布：</strong>西亚石油主要分布在波斯湾及其沿岸地区。</li>
+            <li><strong>二记国家：</strong>沙特、伊朗、伊拉克、科威特、阿联酋、卡塔尔等是重要产油国。</li>
+            <li><strong>三记通道：</strong>霍尔木兹海峡是波斯湾石油外运的咽喉。</li>
+            <li><strong>四记路线：</strong>石油主要输往东亚、欧洲和北美。</li>
+            <li><strong>五记影响：</strong>石油资源影响西亚经济发展和世界能源格局。</li>
           </ul>
         </div>
       </div>
 
-      <!-- 右侧地图区域 -->
-      <div class="population-content-right">
-        <div id="populationMap" class="leaflet-map"></div>
+      <div class="oil-content-right">
+        <div id="oilMap" class="leaflet-map"></div>
 
-        <div class="map-tip">支持拖拽 / 滚轮缩放查看人口与城市分布</div>
+        <div class="map-tip">支持拖拽 / 滚轮缩放查看西亚石油分布与输出路线</div>
 
         <div class="map-control-panel">
           <div class="panel-title">地图控制</div>
@@ -161,77 +135,72 @@
           </label>
 
           <label>
-            <input type="checkbox" v-model="showPopulationTiles" @change="togglePopulationTiles" />
-            人口密度影像
+            <input type="checkbox" v-model="showOilAreas" @change="refreshMapLayers" />
+            石油资源集中区
           </label>
 
           <label>
-            <input type="checkbox" v-model="showNightLightTiles" @change="toggleNightLightTiles" />
-            夜间灯光影像
+            <input type="checkbox" v-model="showGasAreas" @change="refreshMapLayers" />
+            天然气资源区
           </label>
 
           <label>
-            <input type="checkbox" v-model="showDenseAreas" @change="refreshMapLayers" />
-            人口较集中区
+            <input type="checkbox" v-model="showOilCountries" @change="refreshMapLayers" />
+            主要产油国
           </label>
 
           <label>
-            <input type="checkbox" v-model="showSparseAreas" @change="refreshMapLayers" />
-            人口稀疏区
+            <input type="checkbox" v-model="showOilRoutes" @change="refreshMapLayers" />
+            石油输出路线
           </label>
 
           <label>
-            <input type="checkbox" v-model="showTraditionalCities" @change="refreshMapLayers" />
-            历史文化城市
+            <input type="checkbox" v-model="showStraits" @change="refreshMapLayers" />
+            重要海峡与运河
           </label>
 
           <label>
-            <input type="checkbox" v-model="showModernCities" @change="refreshMapLayers" />
-            现代都市 / 石油城市
-          </label>
-
-          <label>
-            <input type="checkbox" v-model="showHolyCities" @change="refreshMapLayers" />
-            宗教圣城
+            <input type="checkbox" v-model="showPorts" @change="refreshMapLayers" />
+            重要港口城市
           </label>
 
           <div class="map-legend">
             <div class="legend-title">图例</div>
 
             <div class="legend-row">
-              <span class="legend-area population-tile-area"></span>
-              <span>人口密度影像</span>
+              <span class="legend-area oil-area"></span>
+              <span>石油资源集中区</span>
             </div>
 
             <div class="legend-row">
-              <span class="legend-area night-light-area"></span>
-              <span>夜间灯光影像</span>
+              <span class="legend-area gas-area"></span>
+              <span>天然气资源区</span>
             </div>
 
             <div class="legend-row">
-              <span class="legend-area dense-area"></span>
-              <span>人口较集中区</span>
+              <span class="legend-dot country-dot"></span>
+              <span>主要产油国</span>
             </div>
 
             <div class="legend-row">
-              <span class="legend-area sparse-area"></span>
-              <span>人口稀疏区</span>
+              <span class="legend-line route-line"></span>
+              <span>石油输出路线</span>
             </div>
 
             <div class="legend-row">
-              <span class="legend-dot traditional-dot"></span>
-              <span>历史文化城市</span>
+              <span class="legend-dot strait-dot"></span>
+              <span>重要海峡 / 运河</span>
             </div>
 
             <div class="legend-row">
-              <span class="legend-dot modern-dot"></span>
-              <span>现代都市 / 石油城市</span>
+              <span class="legend-dot port-dot"></span>
+              <span>重要港口城市</span>
             </div>
+          </div>
 
-            <div class="legend-row">
-              <span class="legend-dot holy-dot"></span>
-              <span>宗教圣城</span>
-            </div>
+          <div class="map-note">
+            <div class="map-note-title">读图提示</div>
+            <div>先找波斯湾，再找霍尔木兹海峡，最后观察石油输出方向。</div>
           </div>
         </div>
       </div>
@@ -243,6 +212,7 @@
 import { nextTick, onMounted, onUnmounted, ref } from 'vue'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
+import { TILE_MAP } from '@/resource'
 
 defineProps<{
   current: {
@@ -252,7 +222,24 @@ defineProps<{
   }
 }>()
 
-type PopulationPoint = {
+type DomLabel = {
+  latlng: L.LatLng
+  el: HTMLDivElement
+  offsetX: number
+  offsetY: number
+}
+
+type AreaItem = {
+  name: string
+  lat: number
+  lng: number
+  radius: number
+  color: string
+  fillColor: string
+  desc: string
+}
+
+type PointItem = {
   name: string
   lat: number
   lng: number
@@ -261,218 +248,223 @@ type PopulationPoint = {
   offsetY?: number
 }
 
-type PopulationArea = {
+type RouteItem = {
   name: string
-  lat: number
-  lng: number
-  radius: number
+  path: [number, number][]
   desc: string
   color: string
-}
-
-type DomLabel = {
-  latlng: L.LatLng
-  el: HTMLDivElement
-  offsetX: number
-  offsetY: number
+  dashArray?: string
 }
 
 let map: L.Map | null = null
 let baseLayer: L.TileLayer | null = null
-let populationTileLayer: L.TileLayer | null = null
-let nightLightTileLayer: L.TileLayer | null = null
 let labelPane: HTMLDivElement | null = null
 let updateLabelRaf = 0
 
-const centerLat = 25.5
-const centerLng = 45.5
+const centerLat = 27.5
+const centerLng = 48.5
 const zoomLevel = 5
 
 const useGoogle = ref(false)
-const showPopulationTiles = ref(false)
-const showNightLightTiles = ref(false)
-const showDenseAreas = ref(true)
-const showSparseAreas = ref(true)
-const showTraditionalCities = ref(true)
-const showModernCities = ref(true)
-const showHolyCities = ref(true)
+const showOilAreas = ref(true)
+const showGasAreas = ref(true)
+const showOilCountries = ref(true)
+const showOilRoutes = ref(true)
+const showStraits = ref(true)
+const showPorts = ref(true)
 
-const denseLayer = L.layerGroup()
-const sparseLayer = L.layerGroup()
-const traditionalCityLayer = L.layerGroup()
-const modernCityLayer = L.layerGroup()
-const holyCityLayer = L.layerGroup()
+const oilAreaLayer = L.layerGroup()
+const gasAreaLayer = L.layerGroup()
+const oilCountryLayer = L.layerGroup()
+const oilRouteLayer = L.layerGroup()
+const straitLayer = L.layerGroup()
+const portLayer = L.layerGroup()
 
-const denseLabels: DomLabel[] = []
-const sparseLabels: DomLabel[] = []
-const traditionalCityLabels: DomLabel[] = []
-const modernCityLabels: DomLabel[] = []
-const holyCityLabels: DomLabel[] = []
+const oilAreaLabels: DomLabel[] = []
+const gasAreaLabels: DomLabel[] = []
+const oilCountryLabels: DomLabel[] = []
+const oilRouteLabels: DomLabel[] = []
+const straitLabels: DomLabel[] = []
+const portLabels: DomLabel[] = []
 
-const denseAreas: PopulationArea[] = [
+const oilAreas: AreaItem[] = [
   {
-    name: '两河流域人口集中区',
-    lat: 33.0,
-    lng: 44.2,
-    radius: 280000,
-    color: '#22c55e',
-    desc: '底格里斯河和幼发拉底河提供水源，是西亚重要农业、城市和人口集中区域。',
+    name: '波斯湾油田集中区',
+    lat: 27.2,
+    lng: 50.8,
+    radius: 520000,
+    color: '#b45309',
+    fillColor: '#f59e0b',
+    desc: '西亚石油资源最集中的地区，周边分布多个重要产油国。',
   },
   {
-    name: '东地中海沿岸人口集中区',
-    lat: 33.5,
-    lng: 35.6,
-    radius: 210000,
-    color: '#0ea5e9',
-    desc: '沿海和山前地带相对湿润，城市历史悠久，人口较集中。',
-  },
-  {
-    name: '波斯湾沿岸城市带',
-    lat: 26.0,
-    lng: 51.8,
-    radius: 430000,
-    color: '#f59e0b',
-    desc: '依托石油资源、港口贸易和现代服务业发展，形成多个现代城市节点。',
-  },
-  {
-    name: '土耳其西部与海峡城市区',
-    lat: 40.5,
-    lng: 29.5,
+    name: '伊拉克南部油田区',
+    lat: 31.0,
+    lng: 47.3,
     radius: 230000,
-    color: '#3b82f6',
-    desc: '靠近土耳其海峡和地中海方向，交通条件突出，城市发展较早。',
+    color: '#c2410c',
+    fillColor: '#fb923c',
+    desc: '靠近两河流域下游和波斯湾方向，是伊拉克重要石油产区。',
+  },
+  {
+    name: '沙特东部油田区',
+    lat: 25.7,
+    lng: 49.6,
+    radius: 300000,
+    color: '#b45309',
+    fillColor: '#fbbf24',
+    desc: '沙特阿拉伯东部靠近波斯湾，是重要石油生产区域。',
   },
 ]
 
-const sparseAreas: PopulationArea[] = [
+const gasAreas: AreaItem[] = [
   {
-    name: '阿拉伯半岛内陆稀疏区',
-    lat: 22.8,
-    lng: 45.5,
-    radius: 580000,
-    color: '#f97316',
-    desc: '沙漠广布，降水稀少，水源条件较差，人口总体稀疏。',
+    name: '卡塔尔天然气资源区',
+    lat: 25.6,
+    lng: 51.2,
+    radius: 190000,
+    color: '#0369a1',
+    fillColor: '#38bdf8',
+    desc: '卡塔尔附近天然气资源丰富，是世界重要天然气出口地区之一。',
   },
   {
-    name: '叙利亚沙漠稀疏区',
-    lat: 34.3,
-    lng: 39.0,
-    radius: 230000,
-    color: '#fb923c',
-    desc: '内陆干旱区，绿洲和交通线附近才有较明显聚落。',
-  },
-  {
-    name: '伊朗高原内部稀疏区',
-    lat: 31.5,
-    lng: 55.0,
-    radius: 370000,
-    color: '#ea580c',
-    desc: '高原内部干旱半干旱范围广，人口多集中在山麓、绿洲和城市节点。',
+    name: '伊朗天然气资源区',
+    lat: 27.5,
+    lng: 53.0,
+    radius: 260000,
+    color: '#0369a1',
+    fillColor: '#7dd3fc',
+    desc: '伊朗南部靠近波斯湾，油气资源丰富。',
   },
 ]
 
-const traditionalCities: PopulationPoint[] = [
+const oilCountries: PointItem[] = [
+  { name: '沙特阿拉伯', lat: 24.2, lng: 45.4, desc: '西亚重要产油国，石油资源和出口影响力突出。' },
+  { name: '伊朗', lat: 32.4, lng: 53.6, desc: '油气资源丰富，位于波斯湾北岸和伊朗高原地区。' },
+  { name: '伊拉克', lat: 33.1, lng: 44.3, desc: '两河流域国家，南部靠近波斯湾方向石油资源丰富。' },
+  { name: '科威特', lat: 29.3, lng: 47.6, desc: '波斯湾沿岸重要产油国。' },
+  { name: '阿联酋', lat: 24.4, lng: 54.4, desc: '油气资源丰富，迪拜、阿布扎比等城市发展较快。' },
+  { name: '卡塔尔', lat: 25.3, lng: 51.2, desc: '天然气资源突出，能源出口地位重要。' },
+]
+
+const straits: PointItem[] = [
   {
-    name: '伊斯坦布尔',
-    lat: 41.0082,
-    lng: 28.9784,
-    desc: '位于欧亚联系的重要节点，历史上长期是东西方交流中心。',
-    offsetX: 10,
-    offsetY: -2,
+    name: '霍尔木兹海峡',
+    lat: 26.56,
+    lng: 56.25,
+    desc: '波斯湾石油外运咽喉，是世界重要能源通道。',
   },
   {
-    name: '巴格达',
-    lat: 33.3152,
-    lng: 44.3661,
-    desc: '位于两河流域，是西亚历史文化和交通联系中的重要城市。',
-    offsetX: 10,
-    offsetY: -2,
+    name: '苏伊士运河',
+    lat: 30.55,
+    lng: 32.35,
+    desc: '连接红海和地中海，是西亚石油通往欧洲的重要通道。',
   },
   {
-    name: '大马士革',
-    lat: 33.5138,
-    lng: 36.2765,
-    desc: '位于东地中海内陆通道附近，是历史悠久的城市之一。',
-    offsetX: 10,
-    offsetY: -2,
-  },
-  {
-    name: '德黑兰',
-    lat: 35.6892,
-    lng: 51.389,
-    desc: '位于伊朗高原北部，是伊朗重要城市和波斯文化区域的重要节点。',
-    offsetX: 10,
-    offsetY: -2,
+    name: '曼德海峡',
+    lat: 12.6,
+    lng: 43.4,
+    desc: '连接红海和亚丁湾，是红海航线上的重要海上通道。',
   },
 ]
 
-const modernCities: PopulationPoint[] = [
+const ports: PointItem[] = [
   {
-    name: '迪拜',
-    lat: 25.2048,
-    lng: 55.2708,
-    desc: '波斯湾沿岸现代化城市，航空、港口、金融、旅游和商业服务功能突出。',
-    offsetX: 10,
-    offsetY: -2,
-  },
-  {
-    name: '阿布扎比',
-    lat: 24.4539,
-    lng: 54.3773,
-    desc: '阿联酋重要城市，依托油气资源发展金融、文化、航空和新能源产业。',
-    offsetX: 10,
-    offsetY: -2,
-  },
-  {
-    name: '多哈',
-    lat: 25.2854,
-    lng: 51.531,
-    desc: '卡塔尔首都，依托能源收入发展航空、会展、体育和服务业。',
-    offsetX: 10,
-    offsetY: -2,
+    name: '拉斯坦努拉',
+    lat: 26.64,
+    lng: 50.16,
+    desc: '沙特阿拉伯波斯湾沿岸重要石油港口。',
   },
   {
     name: '科威特城',
-    lat: 29.3759,
-    lng: 47.9774,
-    desc: '波斯湾沿岸石油城市和港口城市，能源经济特征明显。',
-    offsetX: 10,
-    offsetY: -2,
+    lat: 29.38,
+    lng: 47.98,
+    desc: '波斯湾沿岸港口城市和石油城市。',
   },
   {
-    name: '利雅得',
-    lat: 24.7136,
-    lng: 46.6753,
-    desc: '阿拉伯半岛内陆重要城市，是行政、金融和现代服务业中心。',
-    offsetX: 10,
-    offsetY: -2,
+    name: '阿布扎比',
+    lat: 24.45,
+    lng: 54.38,
+    desc: '阿联酋重要城市，油气、金融和现代服务业发达。',
+  },
+  {
+    name: '多哈',
+    lat: 25.29,
+    lng: 51.53,
+    desc: '卡塔尔首都，天然气和现代服务业发展突出。',
+  },
+  {
+    name: '迪拜',
+    lat: 25.2,
+    lng: 55.27,
+    desc: '波斯湾地区重要航空、港口、商业和旅游城市。',
   },
 ]
 
-const holyCities: PopulationPoint[] = [
+const oilRoutes: RouteItem[] = [
   {
-    name: '麦加',
-    lat: 21.3891,
-    lng: 39.8579,
-    desc: '伊斯兰教最重要的圣地，宗教地位突出。',
-    offsetX: 10,
-    offsetY: -2,
+    name: '东运东亚路线',
+    path: [
+      [26.5, 51.5],
+      [26.55, 56.25],
+      [24.2, 58.7],
+      [20.5, 62.5],
+      [15.0, 66.8],
+      [10.0, 72.0],
+      [6.0, 76.8],
+      [5.3, 81.7],
+      [5.8, 88.5],
+      [6.2, 94.2],
+      [5.1, 96.8],
+      [4.0, 98.6],
+      [3.0, 100.2],
+      [2.1, 101.8],
+      [1.35, 103.6],
+      [1.25, 104.15],
+      [3.2, 107.0],
+      [7.0, 110.6],
+      [12.5, 114.2],
+      [18.5, 118.2],
+      [24.5, 121.0],
+      [30.5, 122.0],
+    ],
+    color: '#dc2626',
+    desc: '波斯湾石油经霍尔木兹海峡、阿拉伯海、印度洋、马六甲海峡和南海输往东亚。',
   },
   {
-    name: '麦地那',
-    lat: 24.5247,
-    lng: 39.5692,
-    desc: '伊斯兰教重要圣地之一，与伊斯兰教早期历史联系密切。',
-    offsetX: 10,
-    offsetY: -2,
+    name: '西运欧洲路线',
+    path: [
+      [26.5, 51.5],
+      [26.4, 56.2],
+      [22.0, 58.2],
+      [16.0, 55.0],
+      [12.6, 43.4],
+      [18.0, 39.5],
+      [25.0, 36.0],
+      [30.5, 32.35],
+      [34.5, 26.0],
+      [38.0, 16.0],
+    ],
+    color: '#f97316',
+    desc: '石油经红海、苏伊士运河和地中海输往欧洲。',
   },
   {
-    name: '耶路撒冷',
-    lat: 31.7683,
-    lng: 35.2137,
-    desc: '对犹太教、基督教和伊斯兰教都具有重要宗教与历史意义。',
-    offsetX: 10,
-    offsetY: -2,
+    name: '绕非远洋路线',
+    path: [
+      [26.5, 51.5],
+      [26.4, 56.2],
+      [15.0, 62.0],
+      [5.0, 66.0],
+      [-10.0, 60.0],
+      [-25.0, 45.0],
+      [-35.0, 20.0],
+      [-20.0, 5.0],
+      [0.0, -10.0],
+      [25.0, -20.0],
+    ],
+    color: '#7c3aed',
+    dashArray: '8 6',
+    desc: '大型油轮可绕过好望角，航程较远但通行限制较少。',
   },
 ]
 
@@ -484,83 +476,17 @@ function switchBaseLayer() {
     baseLayer = null
   }
 
-  const url = useGoogle.value
-    ? 'https://zdys.szjx.ai-study.net/geo-resources-folder/tiles/google-tiles/{z}/{x}/{y}.png'
-    : 'https://zdys.szjx.ai-study.net/geo-resources-folder/tiles/osm-tiles/{z}/{x}/{y}.png'
+  const url = useGoogle.value ? TILE_MAP['google']! : TILE_MAP['osm']!
 
   baseLayer = L.tileLayer(url, {
     attribution: '',
     minZoom: 2,
-    maxZoom: 7,
-    maxNativeZoom: 7,
+    maxZoom: 6,
+    maxNativeZoom: 6,
     zIndex: 1,
   }).addTo(map)
 
   scheduleUpdateLabels()
-}
-
-function togglePopulationTiles() {
-  if (!map) return
-
-  if (showPopulationTiles.value) {
-    if (populationTileLayer) {
-      populationTileLayer.removeFrom(map)
-      populationTileLayer = null
-    }
-
-    populationTileLayer = L.tileLayer('https://zdys.szjx.ai-study.net/geo-resources-folder/tiles/population-tiles/{z}/{x}/{y}.png', {
-      attribution: '',
-      minZoom: 0,
-      maxZoom: 7,
-      maxNativeZoom: 7,
-      opacity: 0.76,
-      zIndex: 10,
-    }).addTo(map)
-  } else if (populationTileLayer) {
-    populationTileLayer.removeFrom(map)
-    populationTileLayer = null
-  }
-
-  scheduleUpdateLabels()
-}
-
-function toggleNightLightTiles() {
-  if (!map) return
-
-  if (showNightLightTiles.value) {
-    if (nightLightTileLayer) {
-      nightLightTileLayer.removeFrom(map)
-      nightLightTileLayer = null
-    }
-
-    nightLightTileLayer = L.tileLayer('https://zdys.szjx.ai-study.net/geo-resources-folder/tiles/night-light-tiles/{z}/{x}/{y}.png', {
-      attribution: '',
-      minZoom: 0,
-      maxZoom: 7,
-      maxNativeZoom: 7,
-      opacity: 0.72,
-      zIndex: 11,
-    }).addTo(map)
-  } else if (nightLightTileLayer) {
-    nightLightTileLayer.removeFrom(map)
-    nightLightTileLayer = null
-  }
-
-  scheduleUpdateLabels()
-}
-
-function clearImageLayers() {
-  if (!map) return
-
-  if (populationTileLayer) {
-    populationTileLayer.removeFrom(map)
-    populationTileLayer = null
-  }
-
-  if (nightLightTileLayer) {
-    nightLightTileLayer.removeFrom(map)
-    nightLightTileLayer = null
-  }
 }
 
 function initLabelPane() {
@@ -568,7 +494,6 @@ function initLabelPane() {
 
   const container = map.getContainer()
   const oldPane = container.querySelector('.custom-map-label-pane')
-
   if (oldPane) oldPane.remove()
 
   labelPane = document.createElement('div')
@@ -591,7 +516,6 @@ function createDomLabel(options: { lat: number; lng: number; content: string; cl
   const el = document.createElement('div')
   el.className = options.className
   el.innerHTML = escapeHtml(options.content)
-
   labelPane.appendChild(el)
 
   const label: DomLabel = {
@@ -616,25 +540,12 @@ function updateOneLabelPosition(label: DomLabel) {
 function updateAllLabelPositions() {
   updateLabelRaf = 0
 
-  if (showDenseAreas.value) {
-    denseLabels.forEach(updateOneLabelPosition)
-  }
-
-  if (showSparseAreas.value) {
-    sparseLabels.forEach(updateOneLabelPosition)
-  }
-
-  if (showTraditionalCities.value) {
-    traditionalCityLabels.forEach(updateOneLabelPosition)
-  }
-
-  if (showModernCities.value) {
-    modernCityLabels.forEach(updateOneLabelPosition)
-  }
-
-  if (showHolyCities.value) {
-    holyCityLabels.forEach(updateOneLabelPosition)
-  }
+  if (showOilAreas.value) oilAreaLabels.forEach(updateOneLabelPosition)
+  if (showGasAreas.value) gasAreaLabels.forEach(updateOneLabelPosition)
+  if (showOilCountries.value) oilCountryLabels.forEach(updateOneLabelPosition)
+  if (showOilRoutes.value) oilRouteLabels.forEach(updateOneLabelPosition)
+  if (showStraits.value) straitLabels.forEach(updateOneLabelPosition)
+  if (showPorts.value) portLabels.forEach(updateOneLabelPosition)
 }
 
 function scheduleUpdateLabels() {
@@ -665,17 +576,14 @@ function unbindMapLabelEvents() {
 }
 
 function clearDomLabels(labels: DomLabel[]) {
-  labels.forEach(label => {
-    label.el.remove()
-  })
-
+  labels.forEach(label => label.el.remove())
   labels.length = 0
 }
 
 function bindInfoPopup(layer: L.Layer, title: string, desc: string) {
   if ('bindPopup' in layer && typeof layer.bindPopup === 'function') {
     layer.bindPopup(`
-      <div style="min-width: 160px; line-height: 1.5;">
+      <div style="min-width: 170px; line-height: 1.5;">
         <div style="font-weight: bold; margin-bottom: 4px;">${escapeHtml(title)}</div>
         <div style="font-size: 12px; color: #444;">${escapeHtml(desc)}</div>
       </div>
@@ -683,7 +591,7 @@ function bindInfoPopup(layer: L.Layer, title: string, desc: string) {
   }
 }
 
-function addAreaLayer(targetLayer: L.LayerGroup, targetLabels: DomLabel[], areas: PopulationArea[], labelClassName: string, fillOpacity = 0.16) {
+function addAreaLayer(targetLayer: L.LayerGroup, targetLabels: DomLabel[], areas: AreaItem[], labelClassName: string, fillOpacity = 0.16) {
   if (!map) return
 
   targetLayer.clearLayers()
@@ -694,9 +602,9 @@ function addAreaLayer(targetLayer: L.LayerGroup, targetLabels: DomLabel[], areas
       radius: item.radius,
       color: item.color,
       weight: 2,
-      fillColor: item.color,
+      fillColor: item.fillColor,
       fillOpacity,
-      opacity: 0.85,
+      opacity: 0.88,
     }).addTo(targetLayer)
 
     bindInfoPopup(circle, item.name, item.desc)
@@ -706,8 +614,6 @@ function addAreaLayer(targetLayer: L.LayerGroup, targetLabels: DomLabel[], areas
       lng: item.lng,
       content: item.name,
       className: labelClassName,
-      offsetX: 0,
-      offsetY: 0,
     })
 
     if (label) targetLabels.push(label)
@@ -716,11 +622,11 @@ function addAreaLayer(targetLayer: L.LayerGroup, targetLabels: DomLabel[], areas
   targetLayer.addTo(map)
 }
 
-function addCityPointLayer(
+function addPointLayer(
   targetLayer: L.LayerGroup,
   targetLabels: DomLabel[],
-  points: PopulationPoint[],
-  markerStyle: {
+  points: PointItem[],
+  style: {
     color: string
     fillColor: string
     radius: number
@@ -734,10 +640,10 @@ function addCityPointLayer(
 
   points.forEach(item => {
     const marker = L.circleMarker([item.lat, item.lng], {
-      radius: markerStyle.radius,
-      color: markerStyle.color,
+      radius: style.radius,
+      color: style.color,
       weight: 2,
-      fillColor: markerStyle.fillColor,
+      fillColor: style.fillColor,
       fillOpacity: 1,
     }).addTo(targetLayer)
 
@@ -747,7 +653,7 @@ function addCityPointLayer(
       lat: item.lat,
       lng: item.lng,
       content: item.name,
-      className: markerStyle.labelClassName,
+      className: style.labelClassName,
       offsetX: item.offsetX ?? 10,
       offsetY: item.offsetY ?? -2,
     })
@@ -758,57 +664,141 @@ function addCityPointLayer(
   targetLayer.addTo(map)
 }
 
+function getArrowHeadPoints(path: [number, number][], size = 1.1): [number, number][] {
+  const end = path[path.length - 1]
+  const before = path[path.length - 2]
+
+  if (!end || !before) return []
+
+  const [endLat, endLng] = end
+  const [beforeLat, beforeLng] = before
+  const dx = endLng - beforeLng
+  const dy = endLat - beforeLat
+  const length = Math.sqrt(dx * dx + dy * dy)
+
+  if (!length) return []
+
+  const ux = dx / length
+  const uy = dy / length
+  const baseLat = endLat - uy * size
+  const baseLng = endLng - ux * size
+  const perpendicularX = -uy
+  const perpendicularY = ux
+  const width = size * 0.55
+
+  return [
+    [endLat, endLng],
+    [baseLat + perpendicularY * width, baseLng + perpendicularX * width],
+    [baseLat - perpendicularY * width, baseLng - perpendicularX * width],
+  ]
+}
+
+function addRouteLayer() {
+  if (!map) return
+
+  oilRouteLayer.clearLayers()
+  clearDomLabels(oilRouteLabels)
+
+  oilRoutes.forEach(item => {
+    const route = L.polyline(item.path, {
+      color: item.color,
+      weight: 3,
+      opacity: 0.9,
+      dashArray: item.dashArray || '',
+      lineCap: 'round',
+      lineJoin: 'round',
+      smoothFactor: 0,
+    }).addTo(oilRouteLayer)
+
+    bindInfoPopup(route, item.name, item.desc)
+
+    const arrowHead = getArrowHeadPoints(item.path, 1.3)
+    if (arrowHead.length) {
+      L.polygon(arrowHead, {
+        color: item.color,
+        fillColor: item.color,
+        fillOpacity: 0.92,
+        opacity: 0.92,
+        weight: 1,
+      }).addTo(oilRouteLayer)
+    }
+
+    const mid = item.path[Math.floor(item.path.length / 2)]
+    if (mid) {
+      const label = createDomLabel({
+        lat: mid[0],
+        lng: mid[1],
+        content: item.name,
+        className: 'route-label-dom',
+        offsetX: 0,
+        offsetY: -12,
+      })
+
+      if (label) oilRouteLabels.push(label)
+    }
+  })
+
+  oilRouteLayer.addTo(map)
+}
+
 function refreshMapLayers() {
   if (!map) return
 
-  if (showSparseAreas.value) {
-    addAreaLayer(sparseLayer, sparseLabels, sparseAreas, 'sparse-label-dom', 0.14)
+  if (showOilAreas.value) {
+    addAreaLayer(oilAreaLayer, oilAreaLabels, oilAreas, 'oil-area-label-dom', 0.18)
   } else {
-    sparseLayer.clearLayers()
-    clearDomLabels(sparseLabels)
+    oilAreaLayer.clearLayers()
+    clearDomLabels(oilAreaLabels)
   }
 
-  if (showDenseAreas.value) {
-    addAreaLayer(denseLayer, denseLabels, denseAreas, 'dense-label-dom', 0.18)
+  if (showGasAreas.value) {
+    addAreaLayer(gasAreaLayer, gasAreaLabels, gasAreas, 'gas-area-label-dom', 0.15)
   } else {
-    denseLayer.clearLayers()
-    clearDomLabels(denseLabels)
+    gasAreaLayer.clearLayers()
+    clearDomLabels(gasAreaLabels)
   }
 
-  if (showTraditionalCities.value) {
-    addCityPointLayer(traditionalCityLayer, traditionalCityLabels, traditionalCities, {
-      color: '#1e3a8a',
-      fillColor: '#bfdbfe',
-      radius: 5.3,
-      labelClassName: 'traditional-city-label-dom',
-    })
-  } else {
-    traditionalCityLayer.clearLayers()
-    clearDomLabels(traditionalCityLabels)
-  }
-
-  if (showModernCities.value) {
-    addCityPointLayer(modernCityLayer, modernCityLabels, modernCities, {
-      color: '#b45309',
+  if (showOilCountries.value) {
+    addPointLayer(oilCountryLayer, oilCountryLabels, oilCountries, {
+      color: '#92400e',
       fillColor: '#fef3c7',
       radius: 5.5,
-      labelClassName: 'modern-city-label-dom',
+      labelClassName: 'country-label-dom',
     })
   } else {
-    modernCityLayer.clearLayers()
-    clearDomLabels(modernCityLabels)
+    oilCountryLayer.clearLayers()
+    clearDomLabels(oilCountryLabels)
   }
 
-  if (showHolyCities.value) {
-    addCityPointLayer(holyCityLayer, holyCityLabels, holyCities, {
-      color: '#b91c1c',
-      fillColor: '#fee2e2',
-      radius: 5.8,
-      labelClassName: 'holy-city-label-dom',
+  if (showOilRoutes.value) {
+    addRouteLayer()
+  } else {
+    oilRouteLayer.clearLayers()
+    clearDomLabels(oilRouteLabels)
+  }
+
+  if (showStraits.value) {
+    addPointLayer(straitLayer, straitLabels, straits, {
+      color: '#1d4ed8',
+      fillColor: '#dbeafe',
+      radius: 6,
+      labelClassName: 'strait-label-dom',
     })
   } else {
-    holyCityLayer.clearLayers()
-    clearDomLabels(holyCityLabels)
+    straitLayer.clearLayers()
+    clearDomLabels(straitLabels)
+  }
+
+  if (showPorts.value) {
+    addPointLayer(portLayer, portLabels, ports, {
+      color: '#047857',
+      fillColor: '#dcfce7',
+      radius: 5.2,
+      labelClassName: 'port-label-dom',
+    })
+  } else {
+    portLayer.clearLayers()
+    clearDomLabels(portLabels)
   }
 
   scheduleUpdateLabels()
@@ -817,33 +807,34 @@ function refreshMapLayers() {
 function cleanupMapLayers() {
   if (!map) return
 
-  clearImageLayers()
+  oilAreaLayer.clearLayers()
+  gasAreaLayer.clearLayers()
+  oilCountryLayer.clearLayers()
+  oilRouteLayer.clearLayers()
+  straitLayer.clearLayers()
+  portLayer.clearLayers()
 
-  denseLayer.clearLayers()
-  sparseLayer.clearLayers()
-  traditionalCityLayer.clearLayers()
-  modernCityLayer.clearLayers()
-  holyCityLayer.clearLayers()
+  if (map.hasLayer(oilAreaLayer)) oilAreaLayer.removeFrom(map)
+  if (map.hasLayer(gasAreaLayer)) gasAreaLayer.removeFrom(map)
+  if (map.hasLayer(oilCountryLayer)) oilCountryLayer.removeFrom(map)
+  if (map.hasLayer(oilRouteLayer)) oilRouteLayer.removeFrom(map)
+  if (map.hasLayer(straitLayer)) straitLayer.removeFrom(map)
+  if (map.hasLayer(portLayer)) portLayer.removeFrom(map)
 
-  if (map.hasLayer(denseLayer)) denseLayer.removeFrom(map)
-  if (map.hasLayer(sparseLayer)) sparseLayer.removeFrom(map)
-  if (map.hasLayer(traditionalCityLayer)) traditionalCityLayer.removeFrom(map)
-  if (map.hasLayer(modernCityLayer)) modernCityLayer.removeFrom(map)
-  if (map.hasLayer(holyCityLayer)) holyCityLayer.removeFrom(map)
-
-  clearDomLabels(denseLabels)
-  clearDomLabels(sparseLabels)
-  clearDomLabels(traditionalCityLabels)
-  clearDomLabels(modernCityLabels)
-  clearDomLabels(holyCityLabels)
+  clearDomLabels(oilAreaLabels)
+  clearDomLabels(gasAreaLabels)
+  clearDomLabels(oilCountryLabels)
+  clearDomLabels(oilRouteLabels)
+  clearDomLabels(straitLabels)
+  clearDomLabels(portLabels)
 }
 
 onMounted(async () => {
-  map = L.map('populationMap', {
+  map = L.map('oilMap', {
     zoomControl: true,
     attributionControl: false,
     minZoom: 2,
-    maxZoom: 7,
+    maxZoom: 6,
     dragging: true,
     scrollWheelZoom: true,
     zoomAnimation: false,
@@ -854,15 +845,6 @@ onMounted(async () => {
   switchBaseLayer()
   initLabelPane()
   bindMapLabelEvents()
-
-  if (showPopulationTiles.value) {
-    togglePopulationTiles()
-  }
-
-  if (showNightLightTiles.value) {
-    toggleNightLightTiles()
-  }
-
   refreshMapLayers()
 
   await nextTick()
@@ -900,24 +882,24 @@ onUnmounted(() => {
 </script>
 
 <style scoped lang="scss">
-.population-container {
+.oil-container {
   padding: 16px;
   height: 100%;
   width: 100%;
 }
 
-.population-header {
+.oil-header {
   margin-bottom: 32px;
 }
 
-.population-content {
+.oil-content {
   display: flex;
   justify-content: space-between;
   height: calc(100% - 80px);
   gap: 20px;
 }
 
-.population-content-left {
+.oil-content-left {
   width: 38%;
   display: flex;
   flex-direction: column;
@@ -926,7 +908,7 @@ onUnmounted(() => {
   padding-right: 4px;
 }
 
-.population-content-right {
+.oil-content-right {
   width: 61%;
   height: 100%;
   border-radius: 8px;
@@ -941,92 +923,90 @@ onUnmounted(() => {
   z-index: 1;
 }
 
-.population-card {
+.oil-card {
   border-radius: 8px;
-  border: 1px solid #dbeafe;
+  border: 1px solid #fed7aa;
   padding: 14px;
-  background: #eff6ff;
+  background: #fff7ed;
 }
 
-.population-card-header {
+.oil-card-header {
   margin-bottom: 12px;
   font-weight: bold;
   font-size: 15px;
-  color: #1e3a8a;
+  color: #9a3412;
 }
 
 .iconfont {
   margin-right: 8px;
-  color: #1e3a8a;
+  color: #9a3412;
 }
 
-.population-card-01 {
-  background: #eff6ff;
-  border-color: #dbeafe;
-}
-
-.population-card-02 {
-  background: #f0fdf4;
-  border-color: #bbf7d0;
-}
-
-.population-card-02 .population-card-header,
-.population-card-02 .iconfont {
-  color: #047857;
-}
-
-.population-card-03 {
+.oil-card-01 {
   background: #fff7ed;
   border-color: #fed7aa;
 }
 
-.population-card-03 .population-card-header,
-.population-card-03 .iconfont {
-  color: #9a3412;
-}
-
-.population-card-04 {
-  background: #f0f9ff;
-  border-color: #bae6fd;
-}
-
-.population-card-04 .population-card-header,
-.population-card-04 .iconfont {
-  color: #0369a1;
-}
-
-.population-card-05 {
+.oil-card-02 {
   background: #fefce8;
   border-color: #fde68a;
 }
 
-.population-card-05 .population-card-header,
-.population-card-05 .iconfont {
+.oil-card-02 .oil-card-header,
+.oil-card-02 .iconfont {
   color: #854d0e;
 }
 
-.mb-8 {
-  margin-bottom: 8px;
+.oil-card-03 {
+  background: #eff6ff;
+  border-color: #bfdbfe;
 }
 
-.population-card p {
+.oil-card-03 .oil-card-header,
+.oil-card-03 .iconfont {
+  color: #1d4ed8;
+}
+
+.oil-card-04 {
+  background: #f0fdfa;
+  border-color: #99f6e4;
+}
+
+.oil-card-04 .oil-card-header,
+.oil-card-04 .iconfont {
+  color: #047857;
+}
+
+.oil-card-05 {
+  background: #fefce8;
+  border-color: #fde68a;
+}
+
+.oil-card-05 .oil-card-header,
+.oil-card-05 .iconfont {
+  color: #854d0e;
+}
+
+.oil-card p {
   line-height: 1.65;
   color: #1f2937;
   margin-top: 0;
 }
 
-.feature-grid {
+.feature-grid,
+.strait-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
   margin: 12px 0;
 }
 
-.feature-box {
+.feature-box,
+.strait-card {
   background: #fff;
   border-radius: 8px;
   padding: 10px;
-  border: 1px solid #dbeafe;
+  border: 1px solid #fed7aa;
 }
 
 .feature-title {
@@ -1038,11 +1018,12 @@ onUnmounted(() => {
 .feature-value {
   font-size: 17px;
   font-weight: bold;
-  color: #0f2748;
+  color: #9a3412;
   margin-bottom: 4px;
 }
 
-.feature-desc {
+.feature-desc,
+.strait-desc {
   font-size: 12px;
   color: #475569;
   line-height: 1.45;
@@ -1052,167 +1033,51 @@ onUnmounted(() => {
   padding: 8px 10px;
   border-radius: 6px;
   background: #fff;
-  border-left: 3px solid #2563eb;
+  border-left: 3px solid #f97316;
   font-size: 13px;
   color: #374151;
 }
 
 .note-title {
   font-weight: bold;
-  color: #1e3a8a;
+  color: #9a3412;
   margin-bottom: 4px;
 }
 
-.rule-item {
+.rule-item,
+.route-item {
   padding: 8px 10px;
   background: #fff;
   border-radius: 6px;
-  border-left: 3px solid #10b981;
+  border-left: 3px solid #f59e0b;
   margin-bottom: 8px;
 }
 
-.rule-item:last-child {
+.rule-item:last-child,
+.route-item:last-child {
   margin-bottom: 0;
 }
 
-.rule-title {
-  font-weight: bold;
-  color: #065f46;
-  margin-bottom: 4px;
-}
-
-.rule-desc {
-  font-size: 13px;
-  color: #444;
-  line-height: 1.45;
-}
-
-.city-type-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-}
-
-.city-type-card {
-  background: #fff;
-  border-radius: 8px;
-  padding: 10px;
-  border: 1px solid #fed7aa;
-  box-shadow: 0 1px 3px rgba(15, 39, 72, 0.08);
-}
-
-.city-type-icon {
-  font-size: 24px;
-  margin-bottom: 4px;
-}
-
-.city-type-title {
+.rule-title,
+.route-title,
+.strait-title {
   font-weight: bold;
   color: #9a3412;
   margin-bottom: 4px;
 }
 
-.city-type-desc {
-  font-size: 12px;
-  color: #374151;
-  line-height: 1.45;
+.route-title {
+  color: #1d4ed8;
 }
 
-.traditional {
-  border-color: #bfdbfe;
+.strait-title {
+  color: #047857;
 }
 
-.traditional .city-type-title {
-  color: #1e3a8a;
-}
-
-.religious {
-  border-color: #fecdd3;
-}
-
-.religious .city-type-title {
-  color: #991b1b;
-}
-
-.oil {
-  border-color: #fed7aa;
-}
-
-.oil .city-type-title {
-  color: #b45309;
-}
-
-.modern {
-  border-color: #ddd6fe;
-}
-
-.modern .city-type-title {
-  color: #6d28d9;
-}
-
-.factor-row {
-  display: grid;
-  grid-template-columns: 44px 1fr;
-  gap: 8px;
-  align-items: center;
-  background: #fff;
-  border-radius: 8px;
-  padding: 8px 10px;
-  margin-bottom: 8px;
-}
-
-.factor-row:last-of-type {
-  margin-bottom: 0;
-}
-
-.factor-label {
-  font-weight: bold;
-  color: #075985;
-}
-
-.factor-bar {
-  height: 10px;
-  background: #e2e8f0;
-  border-radius: 999px;
-  overflow: hidden;
-}
-
-.factor-fill {
-  height: 100%;
-  border-radius: 999px;
-}
-
-.water-fill {
-  width: 92%;
-  background: #0ea5e9;
-}
-
-.oil-fill {
-  width: 78%;
-  background: #f59e0b;
-}
-
-.traffic-fill {
-  width: 70%;
-  background: #6366f1;
-}
-
-.religion-fill {
-  width: 64%;
-  background: #ef4444;
-}
-
-.factor-text {
-  grid-column: 1 / -1;
-  color: #475569;
-  font-size: 12px;
-  line-height: 1.45;
-}
-
-.chart-tip {
-  margin-top: 8px;
-  font-size: 12px;
-  color: #6b7280;
+.rule-desc,
+.route-desc {
+  font-size: 13px;
+  color: #444;
   line-height: 1.45;
 }
 
@@ -1252,7 +1117,7 @@ onUnmounted(() => {
   position: absolute;
   top: 48px;
   right: 10px;
-  width: 220px;
+  width: 236px;
   max-height: calc(100% - 70px);
   overflow-y: auto;
   background: rgba(255, 255, 255, 0.95);
@@ -1274,10 +1139,6 @@ onUnmounted(() => {
   margin-bottom: 6px;
 }
 
-.map-control-panel label:last-of-type {
-  margin-bottom: 0;
-}
-
 .map-legend {
   margin-top: 10px;
   padding-top: 10px;
@@ -1297,10 +1158,6 @@ onUnmounted(() => {
   line-height: 1.35;
 }
 
-.legend-row:last-child {
-  margin-bottom: 0;
-}
-
 .legend-area {
   width: 14px;
   height: 10px;
@@ -1309,24 +1166,14 @@ onUnmounted(() => {
   flex-shrink: 0;
 }
 
-.population-tile-area {
-  background: linear-gradient(to right, rgba(254, 240, 138, 0.9), rgba(249, 115, 22, 0.9), rgba(185, 28, 28, 0.9));
-  border: 1px solid rgba(185, 28, 28, 0.75);
+.oil-area {
+  background: rgba(245, 158, 11, 0.35);
+  border: 1px solid #b45309;
 }
 
-.night-light-area {
-  background: linear-gradient(to right, #111827, #facc15, #ffffff);
-  border: 1px solid rgba(15, 23, 42, 0.75);
-}
-
-.dense-area {
-  background: rgba(34, 197, 94, 0.25);
-  border: 1px solid #16a34a;
-}
-
-.sparse-area {
-  background: rgba(249, 115, 22, 0.22);
-  border: 1px solid #f97316;
+.gas-area {
+  background: rgba(56, 189, 248, 0.3);
+  border: 1px solid #0369a1;
 }
 
 .legend-dot {
@@ -1337,25 +1184,46 @@ onUnmounted(() => {
   flex-shrink: 0;
 }
 
-.traditional-dot {
-  background: #bfdbfe;
-  border: 2px solid #1e3a8a;
-  box-sizing: border-box;
-}
-
-.modern-dot {
+.country-dot {
   background: #fef3c7;
-  border: 2px solid #b45309;
+  border: 2px solid #92400e;
   box-sizing: border-box;
 }
 
-.holy-dot {
-  background: #fee2e2;
-  border: 2px solid #b91c1c;
+.strait-dot {
+  background: #dbeafe;
+  border: 2px solid #1d4ed8;
   box-sizing: border-box;
 }
 
-/* 自定义地图文字层，避免 Leaflet tooltip 缩放错位 */
+.port-dot {
+  background: #dcfce7;
+  border: 2px solid #047857;
+  box-sizing: border-box;
+}
+
+.legend-line {
+  width: 26px;
+  height: 0;
+  display: inline-block;
+  border-top: 3px solid #dc2626;
+  flex-shrink: 0;
+}
+
+.map-note {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  color: #475569;
+  line-height: 1.45;
+}
+
+.map-note-title {
+  font-weight: bold;
+  color: #9a3412;
+  margin-bottom: 4px;
+}
+
 :deep(.custom-map-label-pane) {
   position: absolute;
   left: 0;
@@ -1366,14 +1234,13 @@ onUnmounted(() => {
   pointer-events: none;
 }
 
-:deep(.dense-label-dom) {
+:deep(.oil-area-label-dom),
+:deep(.gas-area-label-dom),
+:deep(.route-label-dom) {
   position: absolute;
   transform: translate(-50%, -50%);
   font-size: 12px;
   font-weight: bold;
-  color: #047857;
-  background: rgba(240, 253, 244, 0.94);
-  border: 1px solid rgba(22, 163, 74, 0.65);
   border-radius: 999px;
   padding: 3px 8px;
   white-space: nowrap;
@@ -1381,63 +1248,53 @@ onUnmounted(() => {
   user-select: none;
 }
 
-:deep(.sparse-label-dom) {
-  position: absolute;
-  transform: translate(-50%, -50%);
-  font-size: 12px;
-  font-weight: bold;
-  color: #c2410c;
-  background: rgba(255, 247, 237, 0.94);
-  border: 1px solid rgba(249, 115, 22, 0.65);
-  border-radius: 999px;
-  padding: 3px 8px;
-  white-space: nowrap;
-  pointer-events: none;
-  user-select: none;
+:deep(.oil-area-label-dom) {
+  color: #9a3412;
+  background: rgba(255, 247, 237, 0.96);
+  border: 1px solid rgba(194, 65, 12, 0.65);
 }
 
-:deep(.traditional-city-label-dom) {
-  position: absolute;
-  transform: translate(0, -50%);
-  font-size: 12px;
-  font-weight: bold;
-  color: #1e3a8a;
-  background: rgba(239, 246, 255, 0.94);
-  border: 1px solid rgba(30, 58, 138, 0.55);
-  border-radius: 4px;
-  padding: 2px 5px;
-  white-space: nowrap;
-  pointer-events: none;
-  user-select: none;
+:deep(.gas-area-label-dom) {
+  color: #0369a1;
+  background: rgba(240, 249, 255, 0.96);
+  border: 1px solid rgba(14, 165, 233, 0.65);
 }
 
-:deep(.modern-city-label-dom) {
-  position: absolute;
-  transform: translate(0, -50%);
-  font-size: 12px;
-  font-weight: bold;
-  color: #b45309;
-  background: rgba(255, 251, 235, 0.94);
-  border: 1px solid rgba(245, 158, 11, 0.65);
-  border-radius: 4px;
-  padding: 2px 5px;
-  white-space: nowrap;
-  pointer-events: none;
-  user-select: none;
-}
-
-:deep(.holy-city-label-dom) {
-  position: absolute;
-  transform: translate(0, -50%);
-  font-size: 12px;
-  font-weight: bold;
+:deep(.route-label-dom) {
   color: #b91c1c;
-  background: rgba(254, 242, 242, 0.94);
-  border: 1px solid rgba(185, 28, 28, 0.6);
+  background: rgba(254, 242, 242, 0.96);
+  border: 1px solid rgba(220, 38, 38, 0.65);
+}
+
+:deep(.country-label-dom),
+:deep(.strait-label-dom),
+:deep(.port-label-dom) {
+  position: absolute;
+  transform: translate(0, -50%);
+  font-size: 12px;
+  font-weight: bold;
   border-radius: 4px;
   padding: 2px 5px;
   white-space: nowrap;
   pointer-events: none;
   user-select: none;
+}
+
+:deep(.country-label-dom) {
+  color: #92400e;
+  background: rgba(255, 251, 235, 0.96);
+  border: 1px solid rgba(146, 64, 14, 0.55);
+}
+
+:deep(.strait-label-dom) {
+  color: #1d4ed8;
+  background: rgba(239, 246, 255, 0.96);
+  border: 1px solid rgba(29, 78, 216, 0.55);
+}
+
+:deep(.port-label-dom) {
+  color: #047857;
+  background: rgba(240, 253, 244, 0.96);
+  border: 1px solid rgba(4, 120, 87, 0.55);
 }
 </style>

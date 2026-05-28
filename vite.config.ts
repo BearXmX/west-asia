@@ -2,7 +2,20 @@ import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
-import { resolve } from 'path'
+import path from 'path'
+import fs from 'fs-extra'
+
+let currentMode = 'online'
+
+const modeArgIndex = process.argv.findIndex(item => item === '--mode')
+
+if (modeArgIndex !== -1 && process.argv[modeArgIndex + 1]) {
+  currentMode = process.argv[modeArgIndex + 1]
+}
+
+const isOffline = currentMode === 'offline'
+
+console.log('当前运行模式', currentMode)
 
 export default defineConfig({
   plugins: [
@@ -17,6 +30,13 @@ export default defineConfig({
         html = html.replace(/type="module"/g, '')
         html = html.replace(/crossorigin/g, '')
 
+        // ========== 新增：离线模式插入隐藏 iconfont 的样式 ==========
+        if (isOffline) {
+          const hideIconStyle = `<style>.iconfont { display: none !important; }</style>`
+          // 插到 </head> 前面，优先级最高
+          html = html.replace('</head>', `${hideIconStyle}\n</head>`)
+        }
+
         // 2. 安全匹配script标签（带空值判断）
         const scriptMatch = html.match(/<script\s+src="[^"]+\.js"><\/script>/i)
         if (scriptMatch && scriptMatch[0]) {
@@ -30,6 +50,20 @@ export default defineConfig({
         return html
       },
     },
+    // 打包完成：在线包删除 tiles / image
+    {
+      name: 'clean-offline-assets',
+      apply: 'build',
+      closeBundle() {
+        if (!isOffline) {
+          const distTiles = path.resolve(__dirname, '西亚-在线版/tiles')
+
+          fs.removeSync(distTiles)
+
+          console.log('✅ 在线包：已移除 dist/tiles')
+        }
+      },
+    },
   ],
   base: './',
   resolve: {
@@ -40,6 +74,7 @@ export default defineConfig({
     },
   },
   build: {
+    outDir: isOffline ? '西亚-离线版' : '西亚-在线版',
     assetsDir: 'assets',
     copyPublicDir: true, // 开启public目录复制（如果textures在public下）
     rollupOptions: {

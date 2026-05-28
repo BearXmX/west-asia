@@ -14,6 +14,12 @@ dist-ssr
 coverage
 *.local
 
+西亚-离线版
+西亚-在线版
+
+西亚-离线版.zip
+西亚-在线版.zip
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

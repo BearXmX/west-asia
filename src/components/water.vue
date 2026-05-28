@@ -143,6 +143,7 @@
 import { nextTick, onMounted, onUnmounted, ref } from 'vue'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
+import { GEOJSON_MAP, TILE_MAP } from '@/resource'
 
 defineProps<{
   current: {
@@ -171,10 +172,10 @@ type WaterPoint = {
 type GeoRiverLayerConfig = {
   id: string
   name: string
-  url: string
   layer: L.GeoJSON | null
   labels: DomLabel[]
   abortController: AbortController | null
+  data: GeoJSON.FeatureCollection<GeoJSON.Geometry, GeoJSON.GeoJsonProperties> | null
 }
 
 let map: L.Map | null = null
@@ -192,15 +193,13 @@ const showWaterStress = ref(true)
 const showDesalination = ref(true)
 const showOasis = ref(true)
 
-const baseGeoUrl = 'https://course-code.oss-cn-shanghai.aliyuncs.com/geojson/'
-
 const riverGeoLayer: GeoRiverLayerConfig = {
   id: 'westasia-river',
   name: '西亚主要河流分布',
-  url: baseGeoUrl + '西亚主要河流分布.geojson',
   layer: null,
   labels: [],
   abortController: null,
+  data: GEOJSON_MAP['西亚主要河流分布']!,
 }
 
 const stressLayer = L.layerGroup()
@@ -294,14 +293,12 @@ function switchBaseLayer() {
     baseLayer = null
   }
 
-  const url = useGoogle.value
-    ? 'https://zdys.szjx.ai-study.net/geo-resources-folder/tiles/google-tiles/{z}/{x}/{y}.png'
-    : 'https://zdys.szjx.ai-study.net/geo-resources-folder/tiles/osm-tiles/{z}/{x}/{y}.png'
+  const url = useGoogle.value ? TILE_MAP['google']! : TILE_MAP['osm']!
 
   baseLayer = L.tileLayer(url, {
     attribution: '',
     minZoom: 2,
-    maxZoom: 7,
+    maxZoom: 5,
   }).addTo(map)
 
   scheduleUpdateLabels()
@@ -440,15 +437,15 @@ async function addRiverLayer() {
   riverGeoLayer.abortController = abortController
 
   try {
-    const response = await fetch(riverGeoLayer.url, {
-      signal: abortController.signal,
-    })
+    const data = (await new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(riverGeoLayer.data!)
+      }, 500)
+    })) as GeoJSON.FeatureCollection<GeoJSON.Geometry, GeoJSON.GeoJsonProperties>
 
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`)
+    if (abortController.signal.aborted || !map || !showRivers.value) {
+      return
     }
-
-    const data = await response.json()
 
     if (abortController.signal.aborted || !map || !showRivers.value) {
       return
@@ -729,7 +726,7 @@ onMounted(async () => {
     zoomControl: true,
     attributionControl: false,
     minZoom: 2,
-    maxZoom: 7,
+    maxZoom: 5,
     dragging: true,
     scrollWheelZoom: true,
     zoomAnimation: false,

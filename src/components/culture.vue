@@ -228,6 +228,7 @@
 import { nextTick, onMounted, onUnmounted, ref } from 'vue'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
+import { IMAGE_MAP, TILE_MAP } from '@/resource'
 
 defineProps<{
   current: {
@@ -307,32 +308,30 @@ const holyLabels: DomLabel[] = []
 const routeLabels: DomLabel[] = []
 const regionLabels: DomLabel[] = []
 
-const cultureImageBaseUrl = 'https://course-code.oss-cn-shanghai.aliyuncs.com/image/'
-
 const cultureCityImageList: CultureImageItem[] = [
   {
     title: '伊斯坦布尔',
-    img: cultureImageBaseUrl + '西亚伊斯坦布尔.png',
+    img: IMAGE_MAP['西亚伊斯坦布尔']!,
     desc: '位于欧亚交会附近，连接黑海与地中海方向，是西亚与欧洲联系的重要文化城市。',
   },
   {
     title: '巴格达',
-    img: cultureImageBaseUrl + '西亚巴格达.png',
+    img: IMAGE_MAP['西亚巴格达']!,
     desc: '位于两河流域，是西亚历史文化、商业交通和区域联系中的重要城市。',
   },
   {
     title: '大马士革',
-    img: cultureImageBaseUrl + '西亚大马士革.png',
+    img: IMAGE_MAP['西亚大马士革']!,
     desc: '位于东地中海内陆通道附近，历史悠久，是西亚古城和传统文化的重要代表。',
   },
   {
     title: '德黑兰',
-    img: cultureImageBaseUrl + '西亚德黑兰.png',
+    img: IMAGE_MAP['西亚德黑兰']!,
     desc: '位于伊朗高原北部，是波斯文化区域的重要城市，也是现代伊朗的核心城市。',
   },
   {
     title: '迪拜',
-    img: cultureImageBaseUrl + '西亚迪拜.png',
+    img: IMAGE_MAP['西亚迪拜']!,
     desc: '位于波斯湾沿岸，是现代化港口、贸易和航空交通中心，体现西亚传统与现代并存的城市景观。',
   },
 ]
@@ -340,17 +339,17 @@ const cultureCityImageList: CultureImageItem[] = [
 const holySiteImageList: CultureImageItem[] = [
   {
     title: '麦加',
-    img: cultureImageBaseUrl + '西亚麦加.png',
+    img: IMAGE_MAP['西亚麦加']!,
     desc: '位于阿拉伯半岛西部，是伊斯兰教最重要的圣地，具有突出的宗教地理意义。',
   },
   {
     title: '麦地那',
-    img: cultureImageBaseUrl + '西亚麦地那.png',
+    img: IMAGE_MAP['西亚麦地那']!,
     desc: '位于阿拉伯半岛西部，是伊斯兰教重要圣地之一，与伊斯兰教早期历史联系密切。',
   },
   {
     title: '耶路撒冷',
-    img: cultureImageBaseUrl + '西亚耶路撒冷.png',
+    img: IMAGE_MAP['西亚耶路撒冷']!,
     desc: '对犹太教、基督教和伊斯兰教都具有重要宗教与历史意义，常被称为三教圣城。',
   },
 ]
@@ -539,14 +538,12 @@ function switchBaseLayer() {
     baseLayer = null
   }
 
-  const url = useGoogle.value
-    ? 'https://zdys.szjx.ai-study.net/geo-resources-folder/tiles/google-tiles/{z}/{x}/{y}.png'
-    : 'https://zdys.szjx.ai-study.net/geo-resources-folder/tiles/osm-tiles/{z}/{x}/{y}.png'
+  const url = useGoogle.value ? TILE_MAP['google']! : TILE_MAP['osm']!
 
   baseLayer = L.tileLayer(url, {
     attribution: '',
     minZoom: 2,
-    maxZoom: 7,
+    maxZoom: 5,
   }).addTo(map)
 
   scheduleUpdateLabels()
@@ -934,7 +931,7 @@ onMounted(async () => {
     zoomControl: true,
     attributionControl: false,
     minZoom: 2,
-    maxZoom: 7,
+    maxZoom: 5,
     dragging: true,
     scrollWheelZoom: true,
     zoomAnimation: false,

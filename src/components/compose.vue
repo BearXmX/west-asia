@@ -117,6 +117,7 @@
 import { onMounted, onUnmounted, ref, nextTick } from 'vue'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
+import { GEOJSON_MAP, TILE_MAP } from '@/resource'
 
 defineProps<{
   current: {
@@ -206,14 +207,12 @@ function switchBaseLayer() {
     baseLayer = null
   }
 
-  const url = useGoogle.value
-    ? 'https://zdys.szjx.ai-study.net/geo-resources-folder/tiles/google-tiles/{z}/{x}/{y}.png'
-    : 'https://zdys.szjx.ai-study.net/geo-resources-folder/tiles/osm-tiles/{z}/{x}/{y}.png'
+  const url = useGoogle.value ? TILE_MAP['google']! : TILE_MAP['osm']!
 
   baseLayer = L.tileLayer(url, {
     attribution: '',
     minZoom: 2,
-    maxZoom: 7,
+    maxZoom: 5,
   }).addTo(map)
 
   scheduleUpdateLabels()
@@ -392,18 +391,11 @@ async function loadCountryBoundary() {
   abortController = new AbortController()
 
   try {
-    const response = await fetch(
-      'https://course-code.oss-cn-shanghai.aliyuncs.com/geojson/%E8%A5%BF%E4%BA%9A%E5%9B%BD%E5%AE%B6%E8%BD%AE%E5%BB%93%E7%BA%BF.geojson',
-      {
-        signal: abortController.signal,
-      },
-    )
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`)
-    }
-
-    const data = await response.json()
+    const data = (await new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(GEOJSON_MAP['西亚国家轮廓线']!)
+      }, 500)
+    })) as GeoJSON.FeatureCollection<GeoJSON.Geometry, GeoJSON.GeoJsonProperties>
 
     if (!map) return
 
@@ -443,7 +435,7 @@ onMounted(() => {
     zoomControl: true,
     attributionControl: false,
     minZoom: 2,
-    maxZoom: 7,
+    maxZoom: 5,
     dragging: true,
     scrollWheelZoom: true,
     zoomAnimation: false,

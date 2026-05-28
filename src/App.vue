@@ -83,6 +83,7 @@ import Sustainable from './components/sustainable.vue'
 import Hotspot from './components/hotspot.vue'
 import Summary from './components/summary.vue'
 import Population from './components/population.vue'
+import { fa } from 'element-plus/es/locale/index.mjs'
 
 // 组件映射
 const components = {
@@ -120,7 +121,7 @@ const showThumbPopup = ref(false)
 const screenWidth = ref(window.innerWidth)
 
 // 控制加强版
-const isEnhance = ref(false)
+const isEnhance = ref(true)
 
 const current = computed(() => {
   const index = pptPages.findIndex(item => item.key === currentKey.value)

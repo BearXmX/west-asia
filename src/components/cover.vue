@@ -76,7 +76,7 @@
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  background-image: url('https://course-code.oss-cn-shanghai.aliyuncs.com/image/%E8%A5%BF%E4%BA%9A%E5%B0%81%E9%9D%A2.png');
+  background-image: url('/image/西亚封面.png');
 }
 
 .cover-overlay {

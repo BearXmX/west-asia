@@ -177,6 +177,7 @@
 import { nextTick, onMounted, onUnmounted, ref } from 'vue'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
+import { GEOJSON_MAP, IMAGE_MAP, TILE_MAP } from '@/resource'
 
 defineProps<{
   current: {
@@ -196,10 +197,10 @@ type DomLabel = {
 type GeoRiverLayerConfig = {
   id: string
   name: string
-  url: string
   layer: L.GeoJSON | null
   labels: DomLabel[]
   abortController: AbortController | null
+  data: GeoJSON.FeatureCollection<GeoJSON.Geometry, GeoJSON.GeoJsonProperties> | null
 }
 
 type AgriArea = {
@@ -245,28 +246,25 @@ const showPastoral = ref(true)
 
 const previewImage = ref<AgriTypeItem | null>(null)
 
-const baseGeoUrl = 'https://course-code.oss-cn-shanghai.aliyuncs.com/geojson/'
-const agriImageBaseUrl = 'https://course-code.oss-cn-shanghai.aliyuncs.com/image/'
-
 const agriTypeList: AgriTypeItem[] = [
   {
     title: '灌溉农业',
-    img: agriImageBaseUrl + '西亚灌溉农业.png',
+    img: IMAGE_MAP['西亚灌溉农业']!,
     desc: '分布在两河流域、约旦河谷等有稳定水源的地区，依靠河流灌溉发展粮食和经济作物生产。',
   },
   {
     title: '绿洲农业',
-    img: agriImageBaseUrl + '西亚绿洲农业.png',
+    img: IMAGE_MAP['西亚绿洲农业']!,
     desc: '分布在沙漠边缘和地下水较丰富的地区，常见椰枣、蔬菜、果树等，是典型的“点状农业”。',
   },
   {
     title: '地中海农业',
-    img: agriImageBaseUrl + '西亚地中海农业.png',
+    img: IMAGE_MAP['西亚地中海农业']!,
     desc: '分布在地中海沿岸和土耳其部分沿海地区，适宜种植橄榄、葡萄、柑橘等园艺作物。',
   },
   {
     title: '高原畜牧业',
-    img: agriImageBaseUrl + '西亚高原畜牧业.png',
+    img: IMAGE_MAP['西亚高原畜牧业']!,
     desc: '分布在安纳托利亚高原、伊朗高原等半干旱地区，以羊、山羊等畜牧业较为常见。',
   },
 ]
@@ -274,10 +272,10 @@ const agriTypeList: AgriTypeItem[] = [
 const riverGeoLayer: GeoRiverLayerConfig = {
   id: 'westasia-river',
   name: '西亚主要河流分布',
-  url: baseGeoUrl + '西亚主要河流分布.geojson',
   layer: null,
   labels: [],
   abortController: null,
+  data: GEOJSON_MAP['西亚主要河流分布']!,
 }
 
 const irrigationLayer = L.layerGroup()
@@ -406,14 +404,12 @@ function switchBaseLayer() {
     baseLayer = null
   }
 
-  const url = useGoogle.value
-    ? 'https://zdys.szjx.ai-study.net/geo-resources-folder/tiles/google-tiles/{z}/{x}/{y}.png'
-    : 'https://zdys.szjx.ai-study.net/geo-resources-folder/tiles/osm-tiles/{z}/{x}/{y}.png'
+  const url = useGoogle.value ? TILE_MAP['google']! : TILE_MAP['osm']!
 
   baseLayer = L.tileLayer(url, {
     attribution: '',
     minZoom: 2,
-    maxZoom: 7,
+    maxZoom: 5,
   }).addTo(map)
 
   scheduleUpdateLabels()
@@ -564,21 +560,17 @@ async function addRiverLayer() {
   riverGeoLayer.abortController = abortController
 
   try {
-    const response = await fetch(riverGeoLayer.url, {
-      signal: abortController.signal,
-    })
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`)
-    }
-
-    const data = await response.json()
+    const data = (await new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(riverGeoLayer.data!)
+      }, 500)
+    })) as GeoJSON.FeatureCollection<GeoJSON.Geometry, GeoJSON.GeoJsonProperties>
 
     if (abortController.signal.aborted || !map || !showRivers.value) {
       return
     }
 
-    riverGeoLayer.layer = L.geoJSON(data, {
+    riverGeoLayer.layer = L.geoJSON(data!, {
       filter: feature => {
         const type = feature?.geometry?.type
         return type !== 'Point' && type !== 'MultiPoint'
@@ -900,7 +892,7 @@ onMounted(async () => {
     zoomControl: true,
     attributionControl: false,
     minZoom: 2,
-    maxZoom: 7,
+    maxZoom: 5,
     dragging: true,
     scrollWheelZoom: true,
     zoomAnimation: false,
