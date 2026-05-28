@@ -834,7 +834,7 @@ onMounted(async () => {
     zoomControl: true,
     attributionControl: false,
     minZoom: 2,
-    maxZoom: 6,
+    maxZoom: 5,
     dragging: true,
     scrollWheelZoom: true,
     zoomAnimation: false,
